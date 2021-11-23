@@ -1,0 +1,19 @@
+{
+	"version": "1.0.0",
+	"name": "fuckthegovmint",
+	"description": "这是一个开源 React 应用程序，可以以各种有趣或严肃的方式使用。 它知道以下语言",
+	"repository": "https://github.com/weizang-75/fuckthegovmint",
+	"author": "weizang-75 <weizang75@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"#fuckthegovmint": "clear && echo Connect with people on WordPress",
+		"dev": "$PWD/unix/dev",
+		"api:dev": "$PWD/unix/api",
+		"api:deploy": "$PWD/unix/firebase",
+		"app-pingpong:dev": "cd ./react/app-pingpong && yarn start",
+		"wp-admin:dev": "cd ./react/wp-admin && yarn start",
+		"wp:create-zip": "clear && $PWD/unix/create-zip",
+		"wp:build": "$PWD/unix/wordpressify",
+		"wp:pub": "yarn wp:build && yarn wp:create-zip && echo && echo Thanks for flying #fuckthegovmint. && echo"
+	}
+}

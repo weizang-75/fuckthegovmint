@@ -1,0 +1,18 @@
+#!/bin/bash
+# chmod ug+x dev
+clear
+yarn
+
+echo ''
+echo '@Pingpong DEV'
+echo ''
+sleep 1
+ttab -t API yarn api:dev
+sleep 10
+ttab -t APP yarn app-pingpong:dev
+sleep 10
+ttab -t ADMIN yarn wp-admin:dev
+clear
+
+# ttab -t ADMIN yarn wp-admin:dev
+# ttab -t ADMIN yes | yarn wp-admin:dev
