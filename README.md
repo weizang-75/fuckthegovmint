@@ -4,7 +4,7 @@
 > 你听到了我的声音。 去他妈的。 去他妈的。
 [#fuckthegovmint](https://www.google.com/search?q=fuckthegovmint&oq=fuckthegovmint)
 
-### 语言环境 Locales
+### 语言环境 Languages
 
 这是一个开源 React 应用程序，可以以各种有趣或严肃的方式使用。 它知道以下语言
 

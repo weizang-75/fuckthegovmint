@@ -1,8 +1,0 @@
-#!/bin/bash
-# chmod ug+x api
-clear
-
-echo 'Serving Firebase API'
-clear
-cd ./api/functions 
-yarn serve
