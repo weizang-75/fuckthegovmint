@@ -1,0 +1,10 @@
+#!/bin/bash
+# chmod ug+x git
+echo ''
+echo 'git ... #fuckthegovmint'
+sleep 1
+git status
+git add .
+git commit -m '.'
+git push
+clear echo && echo Thank you for flying fuckthegovmint. && echo

@@ -1,5 +1,5 @@
 {
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"name": "fuckthegovmint",
 	"description": "这是一个开源 React 应用程序，可以以各种有趣或严肃的方式使用。 它知道以下语言",
 	"repository": "https://github.com/weizang-75/fuckthegovmint",
@@ -8,6 +8,7 @@
 	"scripts": {
 		"#fuckthegovmint": "clear && echo Connect with people on WordPress",
 		"dev": "$PWD/unix/dev",
-		"deploy": "$PWD/unix/deploy"
+		"deploy": "$PWD/unix/deploy",
+		"git": "$PWD/unix/git"
 	}
 }
