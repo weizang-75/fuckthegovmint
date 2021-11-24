@@ -1,5 +1,5 @@
 
-## 去他妈的政府
+## 去他妈的政府 1.0.1
 
 > 你听到了我的声音。 去他妈的。 去他妈的。
 [#fuckthegovmint](https://www.google.com/search?q=fuckthegovmint&oq=fuckthegovmint)
@@ -17,3 +17,9 @@ This is an Open Source React App which can be used in all kinds of fun or seriou
 - 德语 German
 - 俄语 Russian
 - 葡萄牙语 Portuguese
+
+### 资源 Resources
+
+[listingslab CDN](https://listingslab.com/public/)
+
+- [flag SVG](https://listingslab.com/public/?dir=svg%2Fflags)

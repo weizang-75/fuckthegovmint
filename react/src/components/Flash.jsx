@@ -17,7 +17,9 @@ import {
 
 const useStyles = makeStyles((theme) => ({ 
   flashDialog: {
-    zIndex: 99998,
+    // zIndex: 99998,
+    // border: '1px solid white',
+    borderRadius: theme.spacing( 2 ),
   },
 }))
 
