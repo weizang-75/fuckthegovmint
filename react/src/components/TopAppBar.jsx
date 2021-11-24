@@ -32,26 +32,14 @@ const useStyles = makeStyles((theme) => ({
 export default function MenuAppBar() {
 
   const classes = useStyles()
-  const personSlice = useSelector( state => state.person )
-  const { person } = personSlice
-  const { messages, name } = person
-
-  const settingsSlice = useSelector( state => state.settings )
-  const { settings } = settingsSlice
-  const { url } = settings
-  let adminUrl = `${ url }/wp-admin/admin.php?page=pingpong%2Fphp%2FPingpong.php`
-
-  let unseenMessages = 0
-  if ( messages ) unseenMessages = getUnseenMessages(messages).length
-
-  const {
-    colorText,
-  } = settings
+  let adminUrl = ``
+  let unseenMessages = 1
+  let colorText = 'white'
 
   return <AppBar position={ `static` } className={ clsx( classes.appBar )} >
           <Toolbar>
             <Typography variant={ `h6` } style={{ color: colorText }}>
-              { name }
+              { `name` }
             </Typography>
             
             <div className={ clsx( classes.grow )} />

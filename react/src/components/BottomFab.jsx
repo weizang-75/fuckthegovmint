@@ -8,7 +8,6 @@ import {
   Avatar,
 } from '@material-ui/core'
 // import { Icon } from '../theme'
-import { updatePerson } from '../redux/person/actions'
 import { toggleOpen } from '../redux/app/actions'
 import { 
   mainmenuAS,
@@ -57,13 +56,7 @@ export default function BottomFab() {
   
   const classes = useStyles()
   const appSlice = useSelector( state => state.app )
-  const settingsSlice = useSelector( state => state.settings )
-  const personSlice = useSelector( state => state.person )
   const { open } = appSlice
-  const { person } = personSlice
-  const { settings } = settingsSlice
-  if ( !settings || !person.id ) return null
-  const { icon } = settings
 
   if (open) return null
   
@@ -71,10 +64,9 @@ export default function BottomFab() {
             <Toolbar>           
                   <Avatar 
                     className={ clsx( classes.avatarBtn, classes.btn )}
-                    src={ icon }
+                    src={ `icon` }
                     onClick={(e) => {
                                e.preventDefault()
-                               if ( person.id ) updatePerson( `open`, !open )
                                toggleOpen ( !open )
                                setTimeout(() => {  mainmenuAS( `onResize` ) },   50)
                             }}/> 

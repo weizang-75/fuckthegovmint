@@ -30,7 +30,6 @@ const Transition = React.forwardRef( function Transition( props, ref ) {
 export default function Flash() {
   const classes = useStyles()
   const appSlice = useSelector( state => state.app )
-  const settingsSlice = useSelector( state => state.settings )
   const stageSlice = useSelector( state => state.stage )
   const { 
     width,
@@ -40,21 +39,17 @@ export default function Flash() {
     open,
     published,
   } = appSlice
-  let isOpen = false
+  let isOpen = true
   if ( open ) isOpen = true
   const maxWidth = `sm`
-  const {
-    settings,
-  } = settingsSlice
-  let flash = null
-  if (settings){
-    flash = settings.flash
+  let flash = {
+    appBg: `dlajsdln`,
   }
 
   return  <React.Fragment>
             <Timeline />
             <Feedback />
-            { published ? <React.Fragment>
+            <React.Fragment>
               <Dialog
                 open={ isOpen }
                 fullScreen={ width < 650 || height < 450 ? true : false }
@@ -73,6 +68,6 @@ export default function Flash() {
                   <Stage flash={ flash } />
               </Dialog>
               <BottomFab />
-            </React.Fragment> : null }
+            </React.Fragment>
           </React.Fragment>
   }

@@ -20,7 +20,6 @@ import {
 import { 
   Messages,
   MainMenu,
-  NewMessage,
 } from '../components'
 
 const useStyles = makeStyles((theme) => ({ 
@@ -37,10 +36,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Stage() {
   
   const classes = useStyles()
-  const settingsSlice = useSelector( state => state.settings )
   const stageSlice = useSelector( state => state.stage )
-  const { settings } = settingsSlice
-  if ( !settings ) return null
   const { flash } = stageSlice
   
   React.useEffect(() => {
@@ -75,9 +71,6 @@ export default function Stage() {
 
   }, [ stageSlice ])
 
-  let liveAppBg = null
-  const { appBg } = flash
-  if ( appBg !== `none` && appBg !== `` ) liveAppBg = appBg
   const sizes = getSizes()
   const {
     stageH,
@@ -102,15 +95,6 @@ export default function Stage() {
                 <MainMenu sizes={ sizes }/>
               </div> 
 
-              <div id={ `newmessage` } 
-                className={ clsx( classes.movieClip ) }
-                style={{ 
-                  zIndex: 501, opacity: 0,
-                  width: panelW,
-                }}>
-                <NewMessage sizes={ sizes }/>
-              </div> 
-
               <div id={ `messages` } 
                 className={ clsx( classes.movieClip ) }
                 style={{ 
@@ -126,11 +110,11 @@ export default function Stage() {
                   zIndex: 1,
                   width: appBgW, height: appBgH,
                 }}>
-                { liveAppBg ? <img 
+                { flash.appBg ? <img 
                   style={{ 
                     width: '100%', height: '100%', 
                   }}
-                  src={ liveAppBg } 
+                  src={ flash.appBg } 
                   alt={ `App Background` }/> : null }
              </div>  
 

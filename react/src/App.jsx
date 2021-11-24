@@ -1,5 +1,4 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import {
   createTheme,
   MuiThemeProvider,
@@ -12,18 +11,9 @@ import {
 
 export default function App() {
 
-  const settingsSlice = useSelector( state => state.settings )
-  const {
-    settings,
-  } = settingsSlice
-
   let colorTheme = '#DDDDDD'
   let colorBg = '#FFFFFF'
 
-  if ( settings ) {
-    colorTheme = settings.colorTheme
-    colorBg = settings.colorBg
-  }
   let thisTheme = {
     ...theme,
     palette:{

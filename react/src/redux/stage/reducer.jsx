@@ -17,7 +17,9 @@ export const stageSlice = {
   screen: `mainmenu`,
   width: 0,
   height: 0,
-  flash: null,
+  flash: {
+    appBg: `dalsuhdiod.asjd`
+  },
   stageReady: false,
   reply: { playhead: `notsetup`, playing: false },
   mainmenu: { playhead: `notsetup`, playing: false },

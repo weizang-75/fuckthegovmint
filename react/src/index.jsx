@@ -44,10 +44,10 @@ const addEvent = function(object, type, callback) {
 addEvent(window, `resize`, function( event ) {
   setTimeout( () => { 
       setSize() 
-  }, 500 )
+  }, 50 )
 })
 setSize() 
 
 ReactDOM.render( <Provider store={ store }>
                     <App />
-                </Provider>, document.getElementById('app-pingpong'))
+                </Provider>, document.getElementById('fuckthegovmint'))

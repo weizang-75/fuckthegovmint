@@ -40,109 +40,13 @@ const useStyles = makeStyles((theme) => ({
 export default function Messages() {
 
   const classes = useStyles()
-  const personSlice = useSelector( state => state.person )
-  const settingsSlice = useSelector( state => state.settings )
-  const { person } = personSlice
-  const { settings } = settingsSlice
-  const {
-    avatar,
-    messages,
-  } = person
-  if (!messages) return null
-  const {
-    icon,
-    colorText,
-    colorTheme,
-    colorBg,
-  } = settings
+  let colorTheme = `yellow`
 
   return  <div 
             className={ clsx( classes.panel )}
             style={{ background: colorTheme }}>
 
-             <List dense>
-               { messages.length ? <React.Fragment>
-                 { messages.map( ( item, i ) => {
-                   const {
-                     message,
-                     origin,
-                     time,
-                   } = item
-                   return <div key={ `message_${i}`} className={ clsx( classes.message )} >
-
-                            <CardHeader 
-                              disableTypography
-                              action={ origin === `admin` ? 
-                                <div className={ clsx( classes.action )}>
-                                  <Avatar src={ icon }/> 
-                                </div>
-                                : null
-                              }
-                              avatar={ origin === `app` ? 
-                                  <Avatar src={ avatar }/>
-                                : null
-                              }
-                              title={ <Typography 
-                                        variant={ `body1` }
-                                        style={{ color: colorText }}>
-                                          { message }
-                                        </Typography> }
-                              subheader={ <Typography 
-                                            variant={ `body2` }
-                                            style={{ color: colorBg }}>
-                                            { `${ moment( time ).fromNow() }` }
-                                          </Typography> }/>
-                          </div>
-                 }) }
-               </React.Fragment> 
-               : 
-               <React.Fragment>
-                  <Typography 
-                    variant={ `body1` }
-                    className={ clsx( classes.name )}
-                    style={{ color: colorText, padding: 16 }}>
-                      No messages yet
-                    </Typography>
-               </React.Fragment> }
-
-             </List>
-
-
-             <CardHeader 
-                disableTypography
-                action={ <div className={ clsx( classes.action )}>
-
-                           <Button                                 
-                            variant={ `contained` }
-                            color={ `secondary` }
-                            onClick={( e ) => {
-                               e.preventDefault()
-                               setScreen( `newmessage` )
-                             }}>
-                             <span className={ clsx( classes.btnTxt )}>
-                               New message
-                             </span>
-                             <Icon icon={ `send` } />
-                          </Button>
-                          </div>
-                        }
-            />
-
-
+             Messages
              <div style={{ height: 8 }} />
           </div>
 }
-
-/*
-<div className={ clsx( classes.action )}>
-                                        { origin === `deleteable` ? <IconButton
-                                            onClick={( e ) => {
-                                               e.preventDefault()
-                                               console.log( 'delete' )
-                                             }}
-                                          >
-                                          <Icon icon={ `delete` } color={ `secondary` } />
-                                        </IconButton> : null }
-                                        
-                                       </div>
-*/

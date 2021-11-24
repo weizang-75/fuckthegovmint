@@ -11,10 +11,6 @@ import {
   CardActions,
   Typography,
 } from '@material-ui/core'
-import { 
-  setSeen,
-  reply,
-} from '../redux/person/actions'
 import { Icon } from '../theme'
 
 const useStyles = makeStyles((theme) => ({ 
@@ -75,7 +71,6 @@ export default function Message( props ) {
           newMessages.push( messages[i] )
         }
     }
-    setSeen( newMessages )
     return true
   }
 
@@ -109,7 +104,6 @@ export default function Message( props ) {
                      color={ `secondary` }
                      onClick={( e ) => {
                        e.preventDefault()
-                       reply( messageIndex )
                      }}>
                      <Icon icon={ `reply` } />
                      <span className={ clsx( classes.btnTxt )}>
