@@ -5,5 +5,7 @@ echo 'git ... #fuckthegovmint'
 sleep 1
 git status
 git add .
+git status
 git commit -m '.'
+git status
 git push

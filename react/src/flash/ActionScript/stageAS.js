@@ -11,7 +11,6 @@ import { getStore } from '../../'
 const duration = 1
 
 const setup = () => {
-    // console.log ('stageAS setup')
     const sizes = getSizes()
     const {
         stageW,
@@ -27,9 +26,6 @@ const setup = () => {
         scaleY: 1,
         duration: duration,
         ease: Power2.easeOut,
-                  onComplete: () => {
-                      // console.log ('phase2')
-                  }
     })
 
     const certificate = getElement( `certificate` )
@@ -45,15 +41,23 @@ const setup = () => {
                   onComplete: () => {
                       const tick = getElement( `tick` )
                       gsap.fromTo(`#tick`, {
-                          y: 125,
+                          y: stageH - 180,
                           x: stageW/2 - tick.width/2,
-                          rotation: -35,
+                          rotation: -45,
                       },{
                           opacity: 1,
                           rotation: 0,
+                          duration: duration * 0.66,
+                          ease: Power2.easeOut,
+                      })
+                      gsap.fromTo(`#question`, {
+                          y: 125,
+                      },{
+                          opacity: 1,
                           duration: duration,
                           ease: Power2.easeOut,
                       })
+
                   }
     })
 
@@ -86,8 +90,11 @@ const onResize = () => {
             duration: duration,
             ease: Power2.easeOut,
         })
+
+
         gsap.to( `#tick`, {
             x: stageW/2 - tick.width/2,
+            y: stageH - 200,
             duration: duration,
             ease: Power2.easeOut,
         })

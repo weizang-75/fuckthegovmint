@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import { 
   makeStyles,
   Avatar,
+  Typography,
 } from '@material-ui/core'
 import { 
   stageAS,
@@ -22,8 +23,14 @@ const useStyles = makeStyles((theme) => ({
   govmintLogo:{
     width: 120,
     height: 120,
-  }
-
+  },
+  white:{
+    color: 'white',
+  },
+  centerise:{
+    margin: theme.spacing( 2.5 ),
+    textAlign: 'center',
+  },
 }))
 
 export default function Stage() {
@@ -53,8 +60,8 @@ export default function Stage() {
     isMobile,
   } = sizes
 
-  let panelW = 450
-  if ( isMobile ) panelW = stageW - 50
+  let panelW = 600
+  if ( isMobile ) panelW = stageW
 
   return  <div className={ clsx( classes.stage ) }
             style={{ height: stageH }}>
@@ -88,13 +95,28 @@ export default function Stage() {
                 <img src={ `png/tick.png` } alt={ `tick` } />
               </div> 
 
-              <div id={ `message` } 
+              <div id={ `question` } 
                 className={ clsx( classes.movieClip ) }
                 style={{ 
                   zIndex: 400, opacity: 0,
+                  // border: '1px solid limegreen',
                   width: panelW,
                 }}>
-                aldsdils
+                <Typography
+                  gutterBottom
+                  variant={ `h5` }
+                  className={ clsx( classes.white, classes.centerise ) }
+                >
+                  I don't want to disclose my health status, but I wish to support your business.
+                </Typography>
+                <Typography
+                  gutterBottom
+                  variant={ `h5` }
+                  className={ clsx( classes.white, classes.centerise ) }
+                >
+                  If that works for you simply say "Thank you."
+                </Typography>
+                
               </div> 
 
               <div id={ `appBg` } 

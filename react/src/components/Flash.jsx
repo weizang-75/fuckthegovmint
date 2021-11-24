@@ -8,7 +8,6 @@ import {
 } from '@material-ui/core'
 import {
   Timeline,
-  Feedback,
 } from './'
 import { 
   Stage,
@@ -46,7 +45,6 @@ export default function Flash() {
 
   return  <React.Fragment>
             <Timeline />
-            <Feedback />
             <React.Fragment>
               <Dialog
                 open={ isOpen }
