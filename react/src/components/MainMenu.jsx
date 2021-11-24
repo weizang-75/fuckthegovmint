@@ -2,40 +2,21 @@ import React from 'react'
 import clsx from 'clsx'
 import {
   makeStyles,
-  Grid,
-  // Typography,
+  Typography,
 } from '@material-ui/core'
-// import { Icon } from '../theme'
-// import { setScreen } from '../redux/stage/actions'
 
 const useStyles = makeStyles((theme) => ({ 
   panel: {
-    borderRadius: theme.spacing(),
   },
-  messageBtn:{
-    margin: theme.spacing(),
+  white:{
+    color: 'white',
   },
-  person:{
-    marginTop: theme.spacing(2),
-    height: 100,
+  niceGraphic:{
+    textAlign: 'right',
+  },
+  spin:{
     width: 100,
-  },
-  messagesBtn:{
-    marginTop: theme.spacing(),
-  },
-  grow:{
-    flexGrow: 1,
-  },
-  name:{
-    // margin: theme.spacing(),
-    textAlign: 'center',
-  },
-  btnTxt:{ 
-    marginRight: theme.spacing(),
-    marginLeft: theme.spacing(),
-  },
-  btn: {
-    margin: theme.spacing(),
+    height: 100,
   },
 }))
 
@@ -43,19 +24,20 @@ export default function MainMenu() {
 
   const classes = useStyles()
 
-  let colorTheme = `red`
+  return  <div className={ clsx( classes.panel )} >
 
-  return  <div className={ clsx( classes.panel )}
-            style={{ background: colorTheme }}>
+              <Typography 
+                gutterBottom
+                className={ clsx( classes.white )}
+                variant={ `h5` }>
+                I don't want to disclose my health status, but I wish to support your business.
+              </Typography>
 
-            <Grid container>
-              <Grid item className={ clsx( classes.grow )} />
-              <Grid item>
-                MainMenu
-              </Grid>
-              <Grid item  className={ clsx( classes.grow )} />
-            </Grid>
-
-             <div style={{ height: 8 }} />
+              <Typography 
+                className={ clsx( classes.white )}
+                variant={ `h5` }>
+                If that works for you simply say "Thank You".
+              </Typography>
+              
           </div>
 }

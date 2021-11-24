@@ -6,11 +6,6 @@ import {
 	setNewmessage,
 	toggleStageReady, 
 } from '../stage/actions'
-import { 
-	mainmenuAS,
-	messagesAS,
-	newmessageAS,
-} from '../../flash/ActionScript'
 
 export const error = createAction(`APP/ERROR`) 
 export const stage = createAction(`APP/STAGE`) 
@@ -24,9 +19,6 @@ export const toggleOpen = ( open ) => {
 	setMessages({ playhead: `notsetup`, playing: false })
 	setNewmessage({ playhead: `notsetup`, playing: false })
 	toggleStageReady( false )
-	mainmenuAS( 'show' )
-	messagesAS( 'show' )
-	newmessageAS( 'show' )
 	const store = getStore()
 	store.dispatch({ type: `APP/OPEN`, open })
 	return true

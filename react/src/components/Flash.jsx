@@ -9,7 +9,6 @@ import {
 import {
   Timeline,
   Feedback,
-  TopAppBar,
 } from './'
 import { 
   Stage,
@@ -63,8 +62,7 @@ export default function Flash() {
                 onClose={ ( e ) => { 
                   e.preventDefault()
                 }}>
-                <TopAppBar />
-                  <Stage flash={ flash } />
+                <Stage flash={ flash } />
               </Dialog>
             </React.Fragment>
           </React.Fragment>

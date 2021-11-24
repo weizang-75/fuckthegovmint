@@ -20,6 +20,7 @@ export const stageSlice = {
   flash: {
     // appBg: `i-will-not.jpg`,
     appBg: null,
+    logoIcon: `logo192.png`,
   },
   stageReady: false,
   reply: { playhead: `notsetup`, playing: false },

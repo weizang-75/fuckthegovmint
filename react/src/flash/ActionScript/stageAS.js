@@ -64,7 +64,7 @@ const onResize = () => {
     return true
 }
 
-export const stage = ( event ) => {
+export const stageAS = ( event ) => {
     switch ( event ) {
         case `setup`:
             return setup()

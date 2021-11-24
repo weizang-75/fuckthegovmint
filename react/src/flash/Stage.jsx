@@ -4,21 +4,11 @@ import { useSelector } from 'react-redux'
 import { 
   makeStyles,
 } from '@material-ui/core'
-import {
-  setScreen,
-  setMainmenu,
-  setMessages,
-  setNewmessage,
-} from '../redux/stage/actions'
 import { 
-  stage,
+  stageAS,
   getSizes,
-  mainmenuAS,
-  messagesAS,
-  newmessageAS,
 } from './ActionScript'
 import { 
-  Messages,
   MainMenu,
 } from '../components'
 
@@ -43,31 +33,11 @@ export default function Stage() {
 
     const {
       stageReady,
-      mainmenu,
-      messages,
-      screen,
-      newmessage,
     } = stageSlice
 
     if ( !stageReady ) {
-      setTimeout(() => { stage( `setup` ) }, 10)
-      setScreen ( screen )
+      setTimeout(() => { stageAS( `setup` ) }, 10)
     }
-
-    if ( !newmessage.playing && newmessage.playhead === `notsetup` ){
-      setTimeout(() => {  newmessageAS( `setup` ) },   50)
-      setNewmessage({ playhead: `issetup`, playing: false })
-    } 
-
-    if ( !messages.playing && messages.playhead === `notsetup` ){
-      setTimeout(() => {  messagesAS( `setup` ) },   50)
-      setMessages({ playhead: `issetup`, playing: false })
-    } 
-
-    if ( !mainmenu.playing && mainmenu.playhead === `notsetup` ){
-      setTimeout(() => {  mainmenuAS( `setup` ) }, 40)
-      setMainmenu( ({ playhead: `issetup`, playing: false }))
-    } 
 
   }, [ stageSlice ])
 
@@ -80,28 +50,43 @@ export default function Stage() {
     isMobile,
   } = sizes
 
-  let panelW = 400
+  let panelW = 450
   if ( isMobile ) panelW = stageW - 50
 
   return  <div className={ clsx( classes.stage ) }
             style={{ height: stageH }}>
 
+              <div id={ `tick` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 850, opacity: 1,
+                }}>
+                <img src={ `png/tick.png` } alt={ `tick` } />
+              </div> 
+
+              <div id={ `certificate` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 750, opacity: 1,
+                }}>
+                <img src={ `png/certificate.png` } alt={ `certificate` } />
+              </div> 
+
+              <div id={ `logo` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 650, opacity: 1,
+                }}>
+                <img src={ `logo192.png` } alt={ `logo192` } />
+              </div> 
+
               <div id={ `mainmenu` } 
                 className={ clsx( classes.movieClip ) }
                 style={{ 
-                  zIndex: 550, opacity: 0,
+                  zIndex: 550, opacity: 1,
                   width: panelW,
                 }}>
                 <MainMenu sizes={ sizes }/>
-              </div> 
-
-              <div id={ `messages` } 
-                className={ clsx( classes.movieClip ) }
-                style={{ 
-                  zIndex: 450, opacity: 0,
-                  width: panelW,
-                }}>
-                <Messages sizes={ sizes }/>
               </div> 
 
               <div id={ `appBg` } 
