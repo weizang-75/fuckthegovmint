@@ -3,7 +3,6 @@ import Timeline from './Timeline'
 import Messages from './Messages'
 import Message from './Message'
 import Feedback from './Feedback'
-import MainMenu from './MainMenu'
 
 export {
 	Flash,
@@ -11,5 +10,4 @@ export {
 	Messages,
 	Message,
 	Feedback,
-	MainMenu,
 }

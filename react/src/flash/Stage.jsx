@@ -3,14 +3,12 @@ import clsx from 'clsx'
 import { useSelector } from 'react-redux'
 import { 
   makeStyles,
+  Avatar,
 } from '@material-ui/core'
 import { 
   stageAS,
   getSizes,
 } from './ActionScript'
-import { 
-  MainMenu,
-} from '../components'
 
 const useStyles = makeStyles((theme) => ({ 
   stage: {
@@ -21,6 +19,11 @@ const useStyles = makeStyles((theme) => ({
   movieClip:{
     position: 'absolute',
   },
+  govmintLogo:{
+    width: 120,
+    height: 120,
+  }
+
 }))
 
 export default function Stage() {
@@ -56,37 +59,42 @@ export default function Stage() {
   return  <div className={ clsx( classes.stage ) }
             style={{ height: stageH }}>
 
-              <div id={ `tick` } 
+              <div id={ `logo` } 
                 className={ clsx( classes.movieClip ) }
                 style={{ 
-                  zIndex: 850, opacity: 1,
+                  zIndex: 100, opacity: 0,
                 }}>
-                <img src={ `png/tick.png` } alt={ `tick` } />
+
+                <Avatar 
+                  src={`png/stralia.png` } 
+                  className={ clsx( classes.govmintLogo ) }
+                />
               </div> 
 
               <div id={ `certificate` } 
                 className={ clsx( classes.movieClip ) }
                 style={{ 
-                  zIndex: 750, opacity: 1,
+                  zIndex: 200, opacity: 0,
+                  width: 200, height: 75,
                 }}>
                 <img src={ `png/certificate.png` } alt={ `certificate` } />
               </div> 
 
-              <div id={ `logo` } 
+              <div id={ `tick` } 
                 className={ clsx( classes.movieClip ) }
                 style={{ 
-                  zIndex: 650, opacity: 1,
+                  zIndex: 300, opacity: 0,
                 }}>
-                <img src={ `logo192.png` } alt={ `logo192` } />
+                <img src={ `png/tick.png` } alt={ `tick` } />
               </div> 
 
-              <div id={ `mainmenu` } 
+              <div id={ `message` } 
                 className={ clsx( classes.movieClip ) }
                 style={{ 
-                  zIndex: 550, opacity: 1,
+                  zIndex: 400, opacity: 0,
                   width: panelW,
                 }}>
-                <MainMenu sizes={ sizes }/>
+                aldsdils
               </div> 
 
               <div id={ `appBg` } 
@@ -96,9 +104,7 @@ export default function Stage() {
                   width: appBgW, height: appBgH,
                 }}>
                 { flash.appBg ? <img 
-                  style={{ 
-                    width: '100%', height: '100%', 
-                  }}
+                  style={{ width: '100%', height: '100%' }}
                   src={ flash.appBg } 
                   alt={ `App Background` }/> : null }
              </div>  
