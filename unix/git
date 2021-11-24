@@ -7,4 +7,3 @@ git status
 git add .
 git commit -m '.'
 git push
-clear echo && echo Thank you for flying fuckthegovmint. && echo
