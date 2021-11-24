@@ -7,6 +7,8 @@ import reduxStore from './redux'
 import { setSize } from './redux/stage/actions'
 import App from './App'
 
+import * as serviceWorkerRegistration from './serviceWorkerRegistration'
+
 console.log( `${process.env.REACT_APP_APP} ${pJSON.version} (${process.env.REACT_APP_ENV})` )
 
 const store = reduxStore()
@@ -32,3 +34,5 @@ setSize()
 ReactDOM.render( <Provider store={ store }>
                     <App />
                 </Provider>, document.getElementById('fuckthegovmint'))
+
+serviceWorkerRegistration.register();
