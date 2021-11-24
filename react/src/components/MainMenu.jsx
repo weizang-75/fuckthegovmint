@@ -1,15 +1,12 @@
 import React from 'react'
 import clsx from 'clsx'
-import { useSelector } from 'react-redux'
 import {
   makeStyles,
-  Avatar,
-  Button,
   Grid,
-  Typography,
+  // Typography,
 } from '@material-ui/core'
-import { Icon } from '../theme'
-import { setScreen } from '../redux/stage/actions'
+// import { Icon } from '../theme'
+// import { setScreen } from '../redux/stage/actions'
 
 const useStyles = makeStyles((theme) => ({ 
   panel: {

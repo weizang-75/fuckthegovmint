@@ -15,7 +15,6 @@
     "@material-ui/icons": "^4.11.2",
     "@reduxjs/toolkit": "^1.6.2",
     "axios": "^0.23.0",
-    "firebase": "^9.1.2",
     "gsap": "^3.8.0",
     "moment": "^2.29.1",
     "react": "16.12.0",

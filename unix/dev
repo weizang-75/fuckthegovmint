@@ -4,15 +4,8 @@ clear
 yarn
 
 echo ''
-echo '@Pingpong DEV'
+echo '#fuckthegovmint DEV Server'
 echo ''
 sleep 1
-ttab -t API yarn api:dev
-sleep 10
-ttab -t APP yarn app-pingpong:dev
-sleep 10
-ttab -t ADMIN yarn wp-admin:dev
-clear
-
-# ttab -t ADMIN yarn wp-admin:dev
-# ttab -t ADMIN yes | yarn wp-admin:dev
+cd ./react 
+yarn start

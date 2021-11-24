@@ -11,8 +11,8 @@ import {
 
 export default function App() {
 
-  let colorTheme = '#DDDDDD'
-  let colorBg = '#FFFFFF'
+  let colorTheme = '#000'
+  let colorBg = 'rgba(255,255,255,0.5)'
 
   let thisTheme = {
     ...theme,

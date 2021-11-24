@@ -7,14 +7,12 @@ import {
   Slide,
 } from '@material-ui/core'
 import {
-  BottomFab,
   Timeline,
   Feedback,
   TopAppBar,
 } from './'
 import { 
   Stage,
-
 } from '../flash'
 
 const useStyles = makeStyles((theme) => ({ 
@@ -37,7 +35,6 @@ export default function Flash() {
   } = stageSlice
   const { 
     open,
-    published,
   } = appSlice
   let isOpen = true
   if ( open ) isOpen = true
@@ -67,7 +64,6 @@ export default function Flash() {
                 <TopAppBar />
                   <Stage flash={ flash } />
               </Dialog>
-              <BottomFab />
             </React.Fragment>
           </React.Fragment>
   }
