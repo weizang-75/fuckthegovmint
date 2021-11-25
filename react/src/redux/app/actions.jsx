@@ -5,6 +5,15 @@ export const error = createAction(`APP/ERROR`)
 export const open = createAction(`APP/OPEN`)
 export const locale = createAction(`APP/LOCALE`)
 
+export const getQuestion = locale => {
+	const store = getStore()
+	const { locales } = store.getState().app
+	for (let i = 0; i < locales.length; i++ ){	
+		if (locales[i].code === locale) return locales[i].question
+	}
+  return ``
+}
+
 export const navigate = ( path, target ) => {
   window.open( path, target)
   // if ( target === `_self`) toggleOverlay( true )

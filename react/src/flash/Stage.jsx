@@ -14,6 +14,9 @@ import {
 import {
   SwitchLocale,
 } from '../components'
+import {
+  getQuestion,
+} from '../redux/app/actions'
 
 const useStyles = makeStyles((theme) => ({ 
   stage: {
@@ -40,8 +43,11 @@ const useStyles = makeStyles((theme) => ({
 export default function Stage() {
   
   const classes = useStyles()
+  const appSlice = useSelector( state => state.app )
   const stageSlice = useSelector( state => state.stage )
   const { flash } = stageSlice
+  const { locale } = appSlice
+  
   
   React.useEffect(() => {
 
@@ -126,19 +132,12 @@ export default function Stage() {
                 }}>
                 <Typography
                   gutterBottom
-                  variant={ `h5` }
+                  variant={ `h4` }
                   className={ clsx( classes.white, classes.centerise ) }
                 >
-                  I don't want to disclose my health status, but I wish to support your business.
+                  { getQuestion ( locale ) }
                 </Typography>
-                <Typography
-                  gutterBottom
-                  variant={ `h5` }
-                  className={ clsx( classes.white, classes.centerise ) }
-                >
-                  If that works for you simply say "Thank you."
-                </Typography>
-                
+               
               </div> 
 
               <div id={ `appBg` } 
