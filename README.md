@@ -1,28 +1,44 @@
+## 去他妈的政府
 
-## 去他妈的政府 1.0.1
+![fuckthegovmint][https://user-images.githubusercontent.com/43974446/143415471-b55b8d16-6886-4757-a421-b9cda073a033.png]
 
 > 你听到了我的声音。 去他妈的。 去他妈的。
-[#fuckthegovmint](https://www.google.com/search?q=fuckthegovmint&oq=fuckthegovmint)
+
+[fuckthegovmint](https://www.google.com/search?q=fuckthegovmint&oq=fuckthegovmint)
 
 ### 语言环境 Languages
 
-这是一个开源 React 应用程序，可以以各种有趣或严肃的方式使用。 它知道以下语言
+- 简体中文 Simplified Chinese 
 
-This is an Open Source React App which can be used in all kinds of fun or serious ways. It knows the following languages
+我不想透露我的健康状况，但我希望支持您的业务。 如果这对您有用，只需说谢谢。 
 
-I don't want to disclose my health status, but I wish to support your business.
-If that works for you simply say "Thank you."
+- 英语 English 
 
-- 简体中文 Simplified Chinese
-- 英语 English
-- 西班牙语 Spanish
-- 法语 French
-- 德语 German
-- 俄语 Russian
-- 葡萄牙语 Portuguese
+I don't want to disclose my health status, but I wish to support your business. If that works for you simply say Thank you.
+
+- 西班牙语 Spanish 
+
+No quiero revelar mi estado de salud, pero deseo apoyar su negocio. Si eso funciona para usted, simplemente diga Gracias.
+
+- 法语 French 
+
+Je ne veux pas divulguer mon état de santé, mais je souhaite soutenir votre entreprise. Si cela fonctionne pour vous, dites simplement merci.
+
+- 德语 German 
+
+Ich möchte meinen Gesundheitszustand nicht preisgeben, aber ich möchte Ihr Geschäft unterstützen. Wenn das für Sie funktioniert, sagen Sie einfach Danke.
+
+- 俄语 Russian 
+
+Я не хочу раскрывать свое состояние здоровья, но хочу поддержать ваш бизнес. Если это сработает для вас, просто скажите "Спасибо".
+
+- 葡萄牙语 Portuguese 
+
+Não quero divulgar meu estado de saúde, mas gostaria de apoiar seu negócio. Se isso funcionar para você, simplesmente diga Obrigado.
+
 
 ### 资源 Resources
 
 [listingslab CDN](https://listingslab.com/public/)
 
-- [flag SVG](https://listingslab.com/public/?dir=svg%2Fflags)
+- [flag SVGs](https://listingslab.com/public/?dir=svg%2Fflags)
