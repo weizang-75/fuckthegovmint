@@ -73,7 +73,7 @@ export default function Stage() {
                 }}>
 
                 <Avatar 
-                  src={`png/straya.png` } 
+                  src={`png/binchicken.png` } 
                   className={ clsx( classes.govmintLogo ) }
                 />
               </div> 

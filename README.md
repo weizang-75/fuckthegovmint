@@ -1,6 +1,6 @@
 ## 去他妈的政府
 
-![fuckthegovmint][https://user-images.githubusercontent.com/43974446/143415471-b55b8d16-6886-4757-a421-b9cda073a033.png]
+![fuckthegovmint](https://user-images.githubusercontent.com/43974446/143415471-b55b8d16-6886-4757-a421-b9cda073a033.png)
 
 > 你听到了我的声音。 去他妈的。 去他妈的。
 
