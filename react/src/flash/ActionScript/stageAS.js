@@ -21,6 +21,7 @@ const setup = () => {
 
     gsap.fromTo( `#logo`, {
         opacity: 1,
+        x: 8,
         scaleY: 0,
     },{
         scaleY: 1,
@@ -30,8 +31,8 @@ const setup = () => {
 
     const certificate = getElement( `certificate` )
     gsap.fromTo( `#certificate`, {
-        x: stageW - certificate.width,
-        y: 8,
+        x: stageW - certificate.width - 4,
+        y: 12,
         opacity: 1,
         scaleY: 0,
     },{
@@ -41,7 +42,7 @@ const setup = () => {
                   onComplete: () => {
                       const tick = getElement( `tick` )
                       gsap.fromTo(`#tick`, {
-                          y: stageH - 180,
+                          y: stageH - 150,
                           x: stageW/2 - tick.width/2,
                           rotation: -45,
                       },{
@@ -87,19 +88,17 @@ const onResize = () => {
         gsap.to( `#certificate`, {
             x: stageW - certificate.width,
             y: 8,
-            duration: duration,
+            duration: duration * 0.33,
             ease: Power2.easeOut,
         })
-
-
         gsap.to( `#tick`, {
             x: stageW/2 - tick.width/2,
-            y: stageH - 200,
-            duration: duration,
+            y: stageH - 150,
+            duration: duration * 0.33,
             ease: Power2.easeOut,
         })
         gsap.set( `#appBg`, {
-            duration: duration,
+            duration: duration * 0.33,
             ease: Power2.easeOut,
             x: (stageW - appBgW)/2,
             y: (stageH - appBgH)/2,
