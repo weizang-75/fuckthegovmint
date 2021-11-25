@@ -92,7 +92,7 @@ const onResize = () => {
             ease: Power2.easeOut,
         })
         gsap.to( `#tick`, {
-            x: stageW/2 - tick.width/2,
+            x: stageW - tick.width - 8,
             y: stageH - 140,
             duration: duration * 0.33,
             ease: Power2.easeOut,

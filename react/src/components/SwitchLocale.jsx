@@ -1,11 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import { useSelector } from 'react-redux'
-import { getLocaleFlag } from '../lib'
-import { 
-  setUserLocale,
-  setTitle,
-} from '../redux/app/actions'
+// import { getLocaleFlag } from '../lib'
 import {
     withStyles,
     makeStyles,
@@ -73,6 +69,10 @@ const useStyles = makeStyles(theme => ({
 
 
 export default function SwitchLocale() {
+
+  const getLocaleFlag = () => {
+    return null
+  }
   
   const classes = useStyles()
   const appSlice = useSelector(state => state.app)
@@ -89,7 +89,7 @@ export default function SwitchLocale() {
     onClick: (e) => {
       e.preventDefault()
       onLocaleSelect( `en` )
-      setTitle( `Welcome` )
+      console.log( `Welcome` )
     },
   },
   {
@@ -100,7 +100,7 @@ export default function SwitchLocale() {
     onClick: (e) => {
       e.preventDefault()
       onLocaleSelect( `nl` )
-      setTitle( `Welkom` )
+      console.log( `Welkom` )
     },
   },
   {
@@ -111,7 +111,7 @@ export default function SwitchLocale() {
     onClick: (e) => {
       e.preventDefault()
       onLocaleSelect( `fr` )
-      setTitle( `Bienvenue` )
+      console.log( `Bienvenue` )
     },
   },
   {
@@ -122,7 +122,7 @@ export default function SwitchLocale() {
     onClick: (e) => {
       e.preventDefault()
       onLocaleSelect( `es` )
-      setTitle( `Bienvenida` )
+      console.log( `Bienvenida` )
     },
   },
   {
@@ -133,7 +133,7 @@ export default function SwitchLocale() {
     onClick: (e) => {
       e.preventDefault()
       onLocaleSelect( `de` )
-      setTitle( `Willkommen` )
+      console.log( `Willkommen` )
     },
   },
   {
@@ -144,7 +144,7 @@ export default function SwitchLocale() {
     onClick: (e) => {
       e.preventDefault()
       onLocaleSelect( `cn` )
-      setTitle( `欢迎` )
+      console.log( `欢迎` )
     },
   }
 ]
@@ -153,7 +153,7 @@ export default function SwitchLocale() {
 
   const onLocaleSelect = locale => {
     setAnchorEl( null )
-    setUserLocale( locale )
+    // setUserLocale( locale )
     // console.log ('onLocaleSelect', locale)
   }
 

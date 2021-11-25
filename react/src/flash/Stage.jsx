@@ -5,11 +5,15 @@ import {
   makeStyles,
   Avatar,
   Typography,
+  IconButton,
 } from '@material-ui/core'
 import { 
   stageAS,
   getSizes,
 } from './ActionScript'
+import {
+  SwitchLocale,
+} from '../components'
 
 const useStyles = makeStyles((theme) => ({ 
   stage: {
@@ -59,9 +63,9 @@ export default function Stage() {
     appBgH,
     isMobile,
   } = sizes
-
   let panelW = 600
   if ( isMobile ) panelW = stageW
+  let hideLocale = true
 
   return  <div className={ clsx( classes.stage ) }
             style={{ height: stageH }}>
@@ -72,10 +76,18 @@ export default function Stage() {
                   zIndex: 100, opacity: 0,
                 }}>
 
-                <Avatar 
-                  src={`png/binchicken.png` } 
-                  className={ clsx( classes.govmintLogo ) }
-                />
+                { hideLocale ? null : <SwitchLocale /> }
+                
+                <IconButton
+                  onClick={ ( e ) => {
+                    e.preventDefault()
+                    console.log ('logo')
+                  }}>
+                  <Avatar 
+                    src={`png/binchicken.png` } 
+                    className={ clsx( classes.govmintLogo ) }
+                  />
+                </IconButton>
               </div> 
 
               <div id={ `certificate` } 
@@ -92,7 +104,13 @@ export default function Stage() {
                 style={{ 
                   zIndex: 300, opacity: 0,
                 }}>
+                <IconButton
+                  onClick={ ( e ) => {
+                    e.preventDefault()
+                    console.log ('tick')
+                  }}>
                 <img src={ `png/Square-Tick.png` } alt={ `tick` } />
+                </IconButton>
               </div> 
 
               <div id={ `question` } 
