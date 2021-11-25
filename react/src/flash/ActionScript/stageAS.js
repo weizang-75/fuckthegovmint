@@ -59,8 +59,10 @@ const setup = () => {
                           duration: duration * 0.66,
                           ease: Power2.easeOut,
                       })
+
+                      const question = getElement( `question` )
                       gsap.fromTo(`#question`, {
-                          y: 145,
+                          y: stageH/2 - question.height/2,
                       },{
                           opacity: 1,
                           duration: duration,
@@ -93,6 +95,13 @@ const onResize = () => {
     if ( stageReady ) {
         const certificate = getElement( `certificate` )
         const tick = getElement( `tick` )
+        const question = getElement( `question` )
+        gsap.to( `#question`, {
+            y: stageH/2 - question.height/2,
+            duration: duration * 0.33,
+            ease: Power2.easeOut,
+        })
+
         gsap.to( `#certificate`, {
             x: stageW - certificate.width - 50,
             duration: duration * 0.33,
@@ -118,6 +127,7 @@ const onResize = () => {
     }
     return true
 }
+
 
 export const stageAS = ( event ) => {
     switch ( event ) {

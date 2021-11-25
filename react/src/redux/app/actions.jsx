@@ -1,9 +1,23 @@
 import { createAction } from '@reduxjs/toolkit'
 import { getStore } from '../../'
 
+import { stageAS } from '../../flash/ActionScript'
+
 export const error = createAction(`APP/ERROR`)
 export const open = createAction(`APP/OPEN`)
 export const locale = createAction(`APP/LOCALE`)
+
+
+export const switchLocale = locale => {
+	const store = getStore()
+	store.dispatch({ type: `APP/LOCALE`, locale })
+	setTimeout(() => {
+		stageAS( `onResize` )
+	}, 250)
+
+	
+	return true
+}
 
 export const getQuestion = locale => {
 	const store = getStore()
@@ -20,11 +34,7 @@ export const navigate = ( path, target ) => {
   return true
 }
 
-export const switchLocale = locale => {
-	const store = getStore()
-	store.dispatch({ type: `APP/LOCALE`, locale })
-	return true
-}
+
 
 export const toggleStage= stage => {
 	const store = getStore()

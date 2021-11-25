@@ -16,6 +16,7 @@ import {
 } from '../components'
 import {
   getQuestion,
+  navigate,
 } from '../redux/app/actions'
 
 const useStyles = makeStyles((theme) => ({ 
@@ -83,6 +84,8 @@ export default function Stage() {
                 <IconButton
                   onClick={ ( e ) => {
                     e.preventDefault()
+                    // 
+                    navigate( `https://github.com/weizang-75/fuckthegovmint`, `_blank`)
                     console.log ('logo')
                   }}>
                   <Avatar 
