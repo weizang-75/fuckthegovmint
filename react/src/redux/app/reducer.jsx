@@ -11,7 +11,7 @@ export const appSlice = {
   pJSON,
   error: null,
   open: false,
-  locale: `en`,
+  locale: `au`,
   locales,
 }
 

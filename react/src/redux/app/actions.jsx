@@ -11,6 +11,12 @@ export const navigate = ( path, target ) => {
   return true
 }
 
+export const switchLocale = locale => {
+	const store = getStore()
+	store.dispatch({ type: `APP/LOCALE`, locale })
+	return true
+}
+
 export const toggleStage= stage => {
 	const store = getStore()
 	store.dispatch({ type: `APP/STAGE`, stage })

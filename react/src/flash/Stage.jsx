@@ -65,7 +65,6 @@ export default function Stage() {
   } = sizes
   let panelW = 600
   if ( isMobile ) panelW = stageW
-  let hideLocale = true
 
   return  <div className={ clsx( classes.stage ) }
             style={{ height: stageH }}>
@@ -75,9 +74,6 @@ export default function Stage() {
                 style={{ 
                   zIndex: 100, opacity: 0,
                 }}>
-
-                { hideLocale ? null : <SwitchLocale /> }
-                
                 <IconButton
                   onClick={ ( e ) => {
                     e.preventDefault()
@@ -88,6 +84,14 @@ export default function Stage() {
                     className={ clsx( classes.govmintLogo ) }
                   />
                 </IconButton>
+              </div> 
+
+              <div id={ `locale` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 220, opacity: 0,
+                }}>
+                <SwitchLocale />
               </div> 
 
               <div id={ `certificate` } 

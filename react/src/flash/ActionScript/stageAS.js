@@ -20,30 +20,37 @@ const setup = () => {
     } = sizes
 
     gsap.fromTo( `#logo`, {
-        opacity: 1,
         x: 8,
-        scaleY: 0,
     },{
-        scaleY: 1,
+        opacity: 1,
+        duration: duration,
+        ease: Power2.easeOut,
+    })
+
+    gsap.fromTo( `#locale`, {
+        opacity: 1,
+        x: stageW - 78,
+        y: 38,
+    },{
         duration: duration,
         ease: Power2.easeOut,
     })
 
     const certificate = getElement( `certificate` )
     gsap.fromTo( `#certificate`, {
-        x: stageW - certificate.width - 4,
-        y: 12,
-        opacity: 1,
-        scaleY: 0,
+        x: stageW - certificate.width - 50,
+        y: 28,
     },{
-        scaleY: 1,
+        opacity: 1,
+        scaleY: 0.7,
+        scaleX: 0.7,
         duration: duration,
         ease: Power2.easeOut,
                   onComplete: () => {
                       const tick = getElement( `tick` )
                       gsap.fromTo(`#tick`, {
                           y: stageH - 140,
-                          x: stageW - tick.width - 8,
+                          x: stageW - tick.width,
                           rotation: -45,
                       },{
                           opacity: 1,
@@ -86,13 +93,17 @@ const onResize = () => {
         const certificate = getElement( `certificate` )
         const tick = getElement( `tick` )
         gsap.to( `#certificate`, {
-            x: stageW - certificate.width,
-            y: 8,
+            x: stageW - certificate.width - 50,
+            duration: duration * 0.33,
+            ease: Power2.easeOut,
+        })
+        gsap.to( `#locale`, {
+            x: stageW - 78,
             duration: duration * 0.33,
             ease: Power2.easeOut,
         })
         gsap.to( `#tick`, {
-            x: stageW - tick.width - 8,
+            x: stageW - tick.width,
             y: stageH - 140,
             duration: duration * 0.33,
             ease: Power2.easeOut,

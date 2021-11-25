@@ -1,7 +1,7 @@
 import React from 'react'
 import clsx from 'clsx'
 import { useSelector } from 'react-redux'
-// import { getLocaleFlag } from '../lib'
+import { switchLocale } from '../redux/app/actions'
 import {
     withStyles,
     makeStyles,
@@ -56,7 +56,6 @@ const StyledMenuItem = withStyles((theme) => ({
 
 const useStyles = makeStyles(theme => ({
   switchLocale: {
-
   },
   trigger:{
     cursor: 'pointer',
@@ -69,97 +68,14 @@ const useStyles = makeStyles(theme => ({
 
 
 export default function SwitchLocale() {
-
-  const getLocaleFlag = () => {
-    return null
-  }
   
   const classes = useStyles()
   const appSlice = useSelector(state => state.app)
   const {
-    userLocale,
+    locales,
+    locale,
   } = appSlice
-
-  const localeMenu = [
-  {
-    code: `en`,
-    label: `English`,
-    localLabel: `English`,
-    flag: getLocaleFlag( `en` ),
-    onClick: (e) => {
-      e.preventDefault()
-      onLocaleSelect( `en` )
-      console.log( `Welcome` )
-    },
-  },
-  {
-    code: `nl`,
-    localLabel: `Nederlands`,
-    label: `Dutch`,
-    flag: getLocaleFlag( `nl` ),
-    onClick: (e) => {
-      e.preventDefault()
-      onLocaleSelect( `nl` )
-      console.log( `Welkom` )
-    },
-  },
-  {
-    code: `fr`,
-    localLabel: `Français`,
-    label: `French`,
-    flag: getLocaleFlag( `fr` ),
-    onClick: (e) => {
-      e.preventDefault()
-      onLocaleSelect( `fr` )
-      console.log( `Bienvenue` )
-    },
-  },
-  {
-    code: `es`,
-    localLabel: `Español`,
-    label: `Spanish`,
-    flag: getLocaleFlag( `es` ),
-    onClick: (e) => {
-      e.preventDefault()
-      onLocaleSelect( `es` )
-      console.log( `Bienvenida` )
-    },
-  },
-  {
-    code: `de`,
-    localLabel: `Deutsch`,
-    label: `German`,
-    flag: getLocaleFlag( `de` ),
-    onClick: (e) => {
-      e.preventDefault()
-      onLocaleSelect( `de` )
-      console.log( `Willkommen` )
-    },
-  },
-  {
-    code: `cn`,
-    localLabel: `简体中文`,
-    label: `Simplified Chinese`,
-    flag: getLocaleFlag( `cn` ),
-    onClick: (e) => {
-      e.preventDefault()
-      onLocaleSelect( `cn` )
-      console.log( `欢迎` )
-    },
-  }
-]
-
-
-
-  const onLocaleSelect = locale => {
-    setAnchorEl( null )
-    // setUserLocale( locale )
-    // console.log ('onLocaleSelect', locale)
-  }
-
-
-
-  const [anchorEl, setAnchorEl] = React.useState(null)
+  const [ anchorEl, setAnchorEl ] = React.useState(null)
   
   const handleTap = (event) => {
     setAnchorEl(event.currentTarget)
@@ -173,7 +89,7 @@ export default function SwitchLocale() {
     
       <Avatar 
         className={ clsx( classes.trigger, classes.margin10 ) }
-        src={ getLocaleFlag( userLocale ) } 
+        src={ `https://listingslab.com/public/svg/flags/${ locale }.svg` } 
         onClick={ handleTap }
       />
     
@@ -184,22 +100,27 @@ export default function SwitchLocale() {
         open={ Boolean(anchorEl) }
         onClose={ handleClose }>
 
-        { localeMenu.map( (item, i) => {
+        { locales.map( (item, i) => {
             const {
-              // label,
+              code,
               flag,
               localLabel,
-              onClick,
+              label,
             } = item
             return <StyledMenuItem
                       key={`menu_${i}`}
-                      onClick={ onClick }>
+                      onClick={ ( e ) => {
+                        e.preventDefault()
+                        switchLocale( code )
+                        setAnchorEl( null )
+                      }}>
                       <React.Fragment>
                         <ListItemIcon>
                           <Avatar src={ flag } />
                         </ListItemIcon>
                         <ListItemText 
                           primary={ localLabel }
+                          secondary={ label }
                         />
                       </React.Fragment>
                     </StyledMenuItem>
