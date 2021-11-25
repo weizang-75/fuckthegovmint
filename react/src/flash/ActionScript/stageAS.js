@@ -8,7 +8,7 @@ import {
 } from './'
 import { toggleStageReady } from '../../redux/stage/actions'
 import { getStore } from '../../'
-const duration = 1
+const duration = 0.75
 
 const setup = () => {
     const sizes = getSizes()
@@ -42,8 +42,8 @@ const setup = () => {
                   onComplete: () => {
                       const tick = getElement( `tick` )
                       gsap.fromTo(`#tick`, {
-                          y: stageH - 150,
-                          x: stageW/2 - tick.width/2,
+                          y: stageH - 140,
+                          x: stageW - tick.width - 8,
                           rotation: -45,
                       },{
                           opacity: 1,
@@ -52,7 +52,7 @@ const setup = () => {
                           ease: Power2.easeOut,
                       })
                       gsap.fromTo(`#question`, {
-                          y: 125,
+                          y: 145,
                       },{
                           opacity: 1,
                           duration: duration,
@@ -93,7 +93,7 @@ const onResize = () => {
         })
         gsap.to( `#tick`, {
             x: stageW/2 - tick.width/2,
-            y: stageH - 150,
+            y: stageH - 140,
             duration: duration * 0.33,
             ease: Power2.easeOut,
         })

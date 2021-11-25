@@ -27,17 +27,16 @@ const Transition = React.forwardRef( function Transition( props, ref ) {
 
 export default function Flash() {
   const classes = useStyles()
-  const appSlice = useSelector( state => state.app )
+  // const appSlice = useSelector( state => state.app )
   const stageSlice = useSelector( state => state.stage )
   const { 
     width,
     height,
   } = stageSlice
-  const { 
-    open,
-  } = appSlice
+  // const { 
+  //   open,
+  // } = appSlice
   let isOpen = true
-  if ( open ) isOpen = true
   const maxWidth = `sm`
   let flash = {
     appBg: `dlajsdln`,
