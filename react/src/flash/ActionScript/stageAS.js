@@ -39,11 +39,12 @@ const setup = () => {
     const certificate = getElement( `certificate` )
     gsap.fromTo( `#certificate`, {
         x: stageW - certificate.width - 50,
+                scaleY: 0.7,
+        scaleX: 0.7,
         y: 28,
     },{
         opacity: 1,
-        scaleY: 0.7,
-        scaleX: 0.7,
+
         duration: duration,
         ease: Power2.easeOut,
                   onComplete: () => {

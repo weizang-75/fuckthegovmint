@@ -60,6 +60,10 @@ const useStyles = makeStyles(theme => ({
   trigger:{
     cursor: 'pointer',
   },
+  menuFlag:{
+    width: 25,
+    height: 25,
+  },
   margin10:{
     margin: 10,
   },
@@ -105,7 +109,7 @@ export default function SwitchLocale() {
               code,
               flag,
               localLabel,
-              label,
+              // label,
             } = item
             return <StyledMenuItem
                       key={`menu_${i}`}
@@ -116,11 +120,11 @@ export default function SwitchLocale() {
                       }}>
                       <React.Fragment>
                         <ListItemIcon>
-                          <Avatar src={ flag } />
+                          <Avatar src={ flag } className={ clsx( classes.menuFlag ) }/>
                         </ListItemIcon>
                         <ListItemText 
                           primary={ localLabel }
-                          secondary={ label }
+                          // secondary={ label }
                         />
                       </React.Fragment>
                     </StyledMenuItem>
