@@ -36,7 +36,6 @@ Não quero divulgar meu estado de saúde, mas gostaria de apoiar seu negócio. S
 
 ### 资源 Resources
 
-[listingslab CDN](https://listingslab.com/public/)
-
-- [flag SVGs](https://listingslab.com/public/?dir=svg%2Fflags)
+- [CDN](https://listingslab.com/public/)
+- [Flag SVGs](https://listingslab.com/public/?dir=svg%2Fflags)
 - [Google](https://www.google.com/search?q=fuckthegovmint&oq=fuckthegovmint)
