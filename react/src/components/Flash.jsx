@@ -7,19 +7,17 @@ import {
   Slide,
 } from '@material-ui/core'
 import {
-  BottomFab,
   Timeline,
-  Feedback,
-  TopAppBar,
 } from './'
 import { 
   Stage,
-
 } from '../flash'
 
 const useStyles = makeStyles((theme) => ({ 
   flashDialog: {
-    zIndex: 99998,
+    // zIndex: 99998,
+    // border: '1px solid white',
+    borderRadius: theme.spacing( 2 ),
   },
 }))
 
@@ -37,7 +35,6 @@ export default function Flash() {
   } = stageSlice
   const { 
     open,
-    published,
   } = appSlice
   let isOpen = true
   if ( open ) isOpen = true
@@ -48,7 +45,6 @@ export default function Flash() {
 
   return  <React.Fragment>
             <Timeline />
-            <Feedback />
             <React.Fragment>
               <Dialog
                 open={ isOpen }
@@ -64,10 +60,8 @@ export default function Flash() {
                 onClose={ ( e ) => { 
                   e.preventDefault()
                 }}>
-                <TopAppBar />
-                  <Stage flash={ flash } />
+                <Stage flash={ flash } />
               </Dialog>
-              <BottomFab />
             </React.Fragment>
           </React.Fragment>
   }

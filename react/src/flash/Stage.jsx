@@ -3,24 +3,13 @@ import clsx from 'clsx'
 import { useSelector } from 'react-redux'
 import { 
   makeStyles,
+  Avatar,
+  Typography,
 } from '@material-ui/core'
-import {
-  setScreen,
-  setMainmenu,
-  setMessages,
-  setNewmessage,
-} from '../redux/stage/actions'
 import { 
-  stage,
+  stageAS,
   getSizes,
-  mainmenuAS,
-  messagesAS,
-  newmessageAS,
 } from './ActionScript'
-import { 
-  Messages,
-  MainMenu,
-} from '../components'
 
 const useStyles = makeStyles((theme) => ({ 
   stage: {
@@ -30,6 +19,17 @@ const useStyles = makeStyles((theme) => ({
   },
   movieClip:{
     position: 'absolute',
+  },
+  govmintLogo:{
+    width: 120,
+    height: 120,
+  },
+  white:{
+    color: 'white',
+  },
+  centerise:{
+    margin: theme.spacing( 2.5 ),
+    textAlign: 'center',
   },
 }))
 
@@ -43,31 +43,11 @@ export default function Stage() {
 
     const {
       stageReady,
-      mainmenu,
-      messages,
-      screen,
-      newmessage,
     } = stageSlice
 
     if ( !stageReady ) {
-      setTimeout(() => { stage( `setup` ) }, 10)
-      setScreen ( screen )
+      setTimeout(() => { stageAS( `setup` ) }, 10)
     }
-
-    if ( !newmessage.playing && newmessage.playhead === `notsetup` ){
-      setTimeout(() => {  newmessageAS( `setup` ) },   50)
-      setNewmessage({ playhead: `issetup`, playing: false })
-    } 
-
-    if ( !messages.playing && messages.playhead === `notsetup` ){
-      setTimeout(() => {  messagesAS( `setup` ) },   50)
-      setMessages({ playhead: `issetup`, playing: false })
-    } 
-
-    if ( !mainmenu.playing && mainmenu.playhead === `notsetup` ){
-      setTimeout(() => {  mainmenuAS( `setup` ) }, 40)
-      setMainmenu( ({ playhead: `issetup`, playing: false }))
-    } 
 
   }, [ stageSlice ])
 
@@ -80,28 +60,63 @@ export default function Stage() {
     isMobile,
   } = sizes
 
-  let panelW = 400
-  if ( isMobile ) panelW = stageW - 50
+  let panelW = 600
+  if ( isMobile ) panelW = stageW
 
   return  <div className={ clsx( classes.stage ) }
             style={{ height: stageH }}>
 
-              <div id={ `mainmenu` } 
+              <div id={ `logo` } 
                 className={ clsx( classes.movieClip ) }
                 style={{ 
-                  zIndex: 550, opacity: 0,
-                  width: panelW,
+                  zIndex: 100, opacity: 0,
                 }}>
-                <MainMenu sizes={ sizes }/>
+
+                <Avatar 
+                  src={`png/straya.png` } 
+                  className={ clsx( classes.govmintLogo ) }
+                />
               </div> 
 
-              <div id={ `messages` } 
+              <div id={ `certificate` } 
                 className={ clsx( classes.movieClip ) }
                 style={{ 
-                  zIndex: 450, opacity: 0,
+                  zIndex: 200, opacity: 0,
+                  width: 200, height: 75,
+                }}>
+                <img src={ `png/certificate.png` } alt={ `certificate` } />
+              </div> 
+
+              <div id={ `tick` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 300, opacity: 0,
+                }}>
+                <img src={ `png/tick.png` } alt={ `tick` } />
+              </div> 
+
+              <div id={ `question` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 400, opacity: 0,
+                  // border: '1px solid limegreen',
                   width: panelW,
                 }}>
-                <Messages sizes={ sizes }/>
+                <Typography
+                  gutterBottom
+                  variant={ `h5` }
+                  className={ clsx( classes.white, classes.centerise ) }
+                >
+                  I don't want to disclose my health status, but I wish to support your business.
+                </Typography>
+                <Typography
+                  gutterBottom
+                  variant={ `h5` }
+                  className={ clsx( classes.white, classes.centerise ) }
+                >
+                  If that works for you simply say "Thank you."
+                </Typography>
+                
               </div> 
 
               <div id={ `appBg` } 
@@ -111,9 +126,7 @@ export default function Stage() {
                   width: appBgW, height: appBgH,
                 }}>
                 { flash.appBg ? <img 
-                  style={{ 
-                    width: '100%', height: '100%', 
-                  }}
+                  style={{ width: '100%', height: '100%' }}
                   src={ flash.appBg } 
                   alt={ `App Background` }/> : null }
              </div>  

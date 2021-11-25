@@ -11,14 +11,14 @@ import {
 
 export default function App() {
 
-  let colorTheme = '#DDDDDD'
-  let colorBg = '#FFFFFF'
+  let colorTheme = '#065842'
+  let colorBg = '#065842'
 
   let thisTheme = {
     ...theme,
     palette:{
       background: {
-        default: 'none',
+        default: '#065842',
         paper: colorBg,
         main: colorBg,
       },

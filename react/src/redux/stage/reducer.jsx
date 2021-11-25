@@ -18,7 +18,9 @@ export const stageSlice = {
   width: 0,
   height: 0,
   flash: {
-    appBg: `dalsuhdiod.asjd`
+    // appBg: `i-will-not.jpg`,
+    appBg: null,
+    logoIcon: `logo192.png`,
   },
   stageReady: false,
   reply: { playhead: `notsetup`, playing: false },

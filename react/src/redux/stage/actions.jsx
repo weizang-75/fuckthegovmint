@@ -1,10 +1,7 @@
 import { createAction } from '@reduxjs/toolkit'
 import { getStore } from '../../'
 import { 
-	stage,
-	mainmenuAS,
-	messagesAS,
-	newmessageAS,
+	stageAS,
 } from '../../flash/ActionScript/'
 
 export const error = createAction(`STAGE/ERROR`) 
@@ -19,35 +16,6 @@ export const screen = createAction(`STAGE/SCREEN`)
 export const messages = createAction(`STAGE/MESSAGES`)
 export const newmessage = createAction(`STAGE/NEWMESSAGE`)
 
-export const setScreen = screen => {
-	const store = getStore()
-	store.dispatch({type: `STAGE/SCREEN`, screen })
-	let screens = [
-		{
-			slug: `mainmenu`,
-			hide: () => { mainmenuAS ('hide')},
-			show: () => { mainmenuAS ('show')},
-		},
-		{
-			slug: `messages`,
-			hide: () => { messagesAS ('hide')},
-			show: () => { messagesAS ('show')},
-		},
-		{
-			slug: `newmessage`,
-			hide: () => { newmessageAS ('hide')},
-			show: () => { newmessageAS ('show')},
-		},
-	]
-	for ( let i = 0; i < screens.length; i++ ){
-		if ( screen === screens[ i ].slug ){
-			screens[ i ].show()
-		} else {
-			screens[ i ].hide()
-		}	
-	}
-	return true
-}
 
 export const setNewmessage = newmessage => {
 	const store = getStore()
@@ -62,10 +30,7 @@ export const setSize = () => {
 	store.dispatch({type: `STAGE/WIDTH`, width })
 	store.dispatch({type: `STAGE/HEIGHT`, height })
 	setTimeout( () => {
-		stage( `onResize` )
-		mainmenuAS( `onResize` )
-		messagesAS( `onResize` )	
-		newmessageAS( `onResize` )
+		stageAS( `onResize` )
 	}, 100)
 	return true
 }
