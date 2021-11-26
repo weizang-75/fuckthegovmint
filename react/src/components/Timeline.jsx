@@ -4,7 +4,7 @@ import React from 'react'
 export default function Timeline() {
 
   React.useEffect(() => {
-      
+      console.log ( 'Timeline' )
   }, [  ])
 
   return null
