@@ -25,23 +25,18 @@
 
     <title>COVID-19 Certificate</title>
 
-    <style>
-      html { height: 100%; }
-      body {
-        margin: 0; padding: 0;
-        background: #025a41;
-        color: white;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-          "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-          "Helvetica Neue", sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      a {
-        text-decoration: none;
-      }
-      :focus {
-        outline: none;
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 650px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
       }
     </style>
     
@@ -75,9 +70,13 @@
           </ul>
         </div>
     </noscript>
+
     <div id="firstPaint">
-       <h1>COVID-19 Certificate</h1>
-       <ul>
+
+      <div id="message">
+        <h2>Certificate</h2>
+        <h1>COVID-19</h1>
+        <ul>
             <li>English. I don't want to disclose my health status, but I wish to support your business.
           If that works for you simply say Thank you</li>  
 
@@ -91,6 +90,8 @@
 
             <li>Portuguese. Não quero divulgar meu estado de saúde, mas gostaria de apoiar seu negócio. Se isso funcionar para você, simplesmente diga Obrigado.</li> 
           </ul>
+      </div>
+
     </div>
     <div id="fuckthegovmint"></div>
   </body>

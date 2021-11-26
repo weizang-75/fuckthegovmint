@@ -115,13 +115,9 @@ export default function Stage() {
                 style={{ 
                   zIndex: 300, opacity: 0,
                 }}>
-                <IconButton
-                  onClick={ ( e ) => {
-                    e.preventDefault()
-                    console.log ('tick')
-                  }}>
+                
                 <img src={ `png/Square-Tick.png` } alt={ `tick` } />
-                </IconButton>
+                
               </div> 
 
               <div id={ `question` } 
