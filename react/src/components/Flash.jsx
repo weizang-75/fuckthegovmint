@@ -29,6 +29,7 @@ export default function Flash() {
   const classes = useStyles()
   // const appSlice = useSelector( state => state.app )
   const stageSlice = useSelector( state => state.stage )
+
   const { 
     width,
     height,

@@ -84,9 +84,7 @@ export default function Stage() {
                 <IconButton
                   onClick={ ( e ) => {
                     e.preventDefault()
-                    // 
                     navigate( `https://github.com/weizang-75/fuckthegovmint`, `_blank`)
-                    console.log ('logo')
                   }}>
                   <Avatar 
                     src={`png/binchicken.png` } 
@@ -117,13 +115,9 @@ export default function Stage() {
                 style={{ 
                   zIndex: 300, opacity: 0,
                 }}>
-                <IconButton
-                  onClick={ ( e ) => {
-                    e.preventDefault()
-                    console.log ('tick')
-                  }}>
+                
                 <img src={ `png/Square-Tick.png` } alt={ `tick` } />
-                </IconButton>
+                
               </div> 
 
               <div id={ `question` } 

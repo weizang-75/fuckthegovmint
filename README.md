@@ -2,7 +2,7 @@
 
 ![fuckthegovmint](./react/public/png/Facebook-OG.png) 
 
-你听到了我的声音。 去他妈的。 去他妈的。
+你听到了我的声音。 去他妈的。 去他妈的。From JavaScript developer Wei Zang & built with @listingslab's Open Source React... An app which solves the COVID vaccination passport problem through small acts of sedition; [fuckthegovmint](https://fuckthegovmint.web.app)
 
 ### 语言环境 Languages
 

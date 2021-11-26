@@ -50,8 +50,8 @@ const setup = () => {
                   onComplete: () => {
                       const tick = getElement( `tick` )
                       gsap.fromTo(`#tick`, {
-                          y: stageH - 140,
-                          x: stageW - tick.width,
+                          y: stageH - 130,
+                          x: stageW - tick.width - 15,
                           rotation: -45,
                       },{
                           opacity: 1,
@@ -113,8 +113,8 @@ const onResize = () => {
             ease: Power2.easeOut,
         })
         gsap.to( `#tick`, {
-            x: stageW - tick.width,
-            y: stageH - 140,
+            x: stageW - tick.width - 15,
+            y: stageH - 130,
             duration: duration * 0.33,
             ease: Power2.easeOut,
         })
