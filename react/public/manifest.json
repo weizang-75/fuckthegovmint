@@ -1,6 +1,6 @@
 {
   "short_name": "COVID-19",
-  "name": "COVID-19",
+  "name": "COVID-19 Certificate",
   "icons": [
     {
       "src": "favicon.ico",
@@ -17,5 +17,5 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#025a41",
-  "background_color": "#025a41"
+  "background_color": "#002e21"
 }

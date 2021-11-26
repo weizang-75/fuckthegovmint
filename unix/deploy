@@ -1,12 +1,9 @@
 #!/bin/bash
 # chmod ug+x deploy
-echo ''
 echo 'deploying ... #fuckthegovmint'
 sleep 1
-clear
 cd ./react 
 yarn
 yarn build
 cd ../
 firebase deploy
-clear echo && echo Thank you for flying fuckthegovmint. && echo

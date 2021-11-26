@@ -1,7 +1,7 @@
 {
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"name": "fuckthegovmint",
-	"description": "这是一个开源 React 应用程序，可以以各种有趣或严肃的方式使用。 它知道以下语言",
+	"description": "渐进式网络应用程序",
 	"repository": "https://github.com/weizang-75/fuckthegovmint",
 	"author": "weizang-75 <weizang75@gmail.com>",
 	"license": "MIT",
