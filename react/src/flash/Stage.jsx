@@ -84,9 +84,7 @@ export default function Stage() {
                 <IconButton
                   onClick={ ( e ) => {
                     e.preventDefault()
-                    // 
                     navigate( `https://github.com/weizang-75/fuckthegovmint`, `_blank`)
-                    console.log ('logo')
                   }}>
                   <Avatar 
                     src={`png/binchicken.png` } 
