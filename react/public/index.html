@@ -32,12 +32,19 @@
         font-family: Roboto, Helvetica, Arial, sans-serif; 
         margin: 0; padding: 0; 
       }
+      .depreciated{
+        visibility: hidden;
+        display: none;
+      }
       #message { 
         background: #025a41; 
         max-width: 600px; 
         margin: 100px auto 16px; 
         padding: 32px 24px; 
         border-radius: 3px; 
+      }
+      .facebookOg {
+        width:  100%;
       }
       #message .logo {
         margin-right: 25px;
@@ -52,14 +59,18 @@
         color: #FFF; 
         margin: 0 0 16px;
       }
+
+      #message ul { 
+        padding:  0;
+        list-style: none;
+      }
+      #message li { 
+        margin-top: 16px;
+      }
       @media (max-width: 600px) {
         body, #message { 
           margin-top: 0; 
-          background: white; 
           box-shadow: none; 
-        }
-        body { 
-          border-top: 16px solid #ffa100; 
         }
       }
     </style>
@@ -101,6 +112,10 @@
 
             <li>Portuguese. Não quero divulgar meu estado de saúde, mas gostaria de apoiar seu negócio. Se isso funcionar para você, simplesmente diga Obrigado.</li> 
           </ul>
+        <img 
+          src="https://fuckthegovmint.web.app/jpg/Facebook-OG.jpg" 
+          class="facebookOg" 
+          alt="COVID-19 Certificate" />
       </div>
 
     </div>

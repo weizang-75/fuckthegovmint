@@ -11,6 +11,10 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 
 console.log( `${process.env.REACT_APP_APP} ${pJSON.version} (${process.env.REACT_APP_ENV})` )
 
+
+let element = document.getElementById( `firstPaint` )
+element.classList.add( `depreciated` )
+
 const store = reduxStore()
 export const getStore = () => { return store }
 
