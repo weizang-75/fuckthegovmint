@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { fingerprint } from '../person/actions'
+import { init } from '../person/actions'
 
 export default function Timeline() {
 
@@ -11,7 +11,7 @@ export default function Timeline() {
         fingerprinting,
         fingerprinted,
       } = personSlice
-      if ( !fingerprinting && !fingerprinted ) fingerprint ()
+      if ( !fingerprinting && !fingerprinted ) init ()
   }, [ personSlice ])
 
   return null

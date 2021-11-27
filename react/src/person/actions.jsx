@@ -5,9 +5,10 @@ import FingerprintJS from '@fingerprintjs/fingerprintjs'
 export const error = createAction(`PERSON/ERROR`)
 export const fingerprinting = createAction(`PERSON/FINGERPRINTING`)
 export const fingerprinted = createAction(`PERSON/FINGERPRINTED`)
+export const fingerprint = createAction(`PERSON/FINGERPRINT`)
 export const geo = createAction(`PERSON/GEO`)
 
-export const fingerprint = async () => {
+export const init = async () => {
     try {
     	const store = getStore()
 		store.dispatch({type: `PERSON/FINGERPRINTING`, fingerprinting: true })
@@ -19,8 +20,9 @@ export const fingerprint = async () => {
 		const result = await fp.get()
 		const visitorId = result.visitorId
 		let f = `${ geo.IPv4 }_${ visitorId }`
-	  	console.log('f', f)
+	  	// console.log('f', f)
 		// check ( f )
+		store.dispatch({type: `PERSON/FINGERPRINT`, fingerprint: f })
 		store.dispatch({type: `PERSON/FINGERPRINTED`, fingerprinted: true })
 		return true
     } catch ( error ) {
