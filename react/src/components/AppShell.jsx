@@ -12,7 +12,7 @@ import {
   Covid,
   Omicron,
 } from '../flash'
-import { setLocation } from '../redux/app/actions'
+import { setPathname } from '../redux/app/actions'
 
 const useStyles = makeStyles((theme) => ({ 
   flashDialog: {
@@ -28,19 +28,20 @@ export default function AppShell() {
   const classes = useStyles()
 
   const appSlice = useSelector( state => state.app )
-  const { location } = appSlice
-  
+  const { 
+    // location,
+    pathname,
+  } = appSlice
 
   const stageSlice = useSelector( state => state.stage )
 
   React.useEffect(() => {
-    let thisLocation = getHistory().location
-    const { location } = appSlice
-    if ( !location ) setLocation( thisLocation )
+    const { pathname } = appSlice
+    if ( !pathname ) setPathname( getHistory().location.pathname )
   }, [ appSlice ])
 
-  if ( !location ) return null
-  const { pathname } = location
+  if ( !pathname ) return null
+  // const { pathname } = location
   let appComponent = null
   switch ( pathname ) {
       case `/`:

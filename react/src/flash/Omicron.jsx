@@ -15,9 +15,9 @@ import {
   omicronAS,
   getSizes,
 } from './ActionScript'
-// import {
-//   SwitchLocale,
-// } from '../components'
+import {
+  setPathname,
+} from '../redux/app/actions'
 
 const useStyles = makeStyles((theme) => ({ 
   stage: {
@@ -59,9 +59,7 @@ export default function Omnicron() {
       setTimeout(() => { omicronAS( `setup` ) }, 10)
       setTimeout(() => { omicronAS( `toMoronic` ) }, 1000)
     }
-
-    console.log ('DO SHIT HERE')
-
+    document.title = `Omnicron. Who is calling whom a moron?`
   }, [ stageSlice ])
 
   const sizes = getSizes()
@@ -80,13 +78,13 @@ export default function Omnicron() {
                <div id={ `tick` } 
                 className={ clsx( classes.movieClip ) }
                 style={{ 
-                  zIndex: 300, opacity: 1,
+                  zIndex: 1000, opacity: 0,
                 }}>
                 <IconButton
                   className={ clsx( classes.tickBtn ) }
                   onClick={ ( e ) => {
                     e.preventDefault()
-                    console.log ('tick')
+                    setPathname( `/` )
                   }}>
                   <img src={ `png/Square-Tick.png` } alt={ `tick` } />
                 </IconButton>

@@ -5,6 +5,7 @@ import {
   open,
   locale,
   location,
+  pathname,
 } from "./actions"
 import { locales } from './locales'
 
@@ -15,9 +16,15 @@ export const appSlice = {
   locale: `au`,
   locales,
   location: null,
+  pathname: null,
 }
 
 const appReducer = createReducer( appSlice, {
+  
+  [pathname]: (state, action) => {
+    state.pathname = action.pathname
+    return state
+  },
   
   [location]: (state, action) => {
     state.location = action.location

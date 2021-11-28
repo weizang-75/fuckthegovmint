@@ -1,11 +1,20 @@
 import { createAction } from '@reduxjs/toolkit'
-import { getStore } from '../../'
+import { getStore, getHistory } from '../../'
 import { covidAS } from '../../flash/ActionScript'
-
+import { toggleStageReady } from '../stage/actions'
 export const error = createAction(`APP/ERROR`)
 export const open = createAction(`APP/OPEN`)
 export const locale = createAction(`APP/LOCALE`)
 export const location = createAction(`APP/LOCATION`)
+export const pathname = createAction(`APP/PATHNAME`)
+
+export const setPathname = pathname => {
+	toggleStageReady( false )
+	const store = getStore()
+	store.dispatch({ type: `APP/PATHNAME`, pathname })
+	getHistory().push( pathname )
+	return true
+}
 
 export const setLocation = location => {
 	const store = getStore()
@@ -18,7 +27,7 @@ export const switchLocale = locale => {
 	store.dispatch({ type: `APP/LOCALE`, locale })
 	setTimeout(() => {
 		covidAS( `onResize` )
-	}, 250)
+	}, 100)
 	return true
 }
 

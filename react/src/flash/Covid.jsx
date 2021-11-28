@@ -17,6 +17,7 @@ import {
 import {
   getQuestion,
   navigate,
+  setPathname,
 } from '../redux/app/actions'
 
 const useStyles = makeStyles((theme) => ({ 
@@ -38,6 +39,9 @@ const useStyles = makeStyles((theme) => ({
   },
   white:{
     color: 'white',
+  },
+  yellow:{
+    color: '#f1fd37',
   },
   centerise:{
     margin: theme.spacing( 2.5 ),
@@ -61,6 +65,7 @@ export default function Covid() {
     if ( !stageReady ) {
       setTimeout(() => { covidAS( `setup` ) }, 10)
     }
+    document.title = `COVID-19 Certificate`
   }, [ stageSlice ])
 
   const sizes = getSizes()
@@ -76,6 +81,34 @@ export default function Covid() {
 
   return  <div className={ clsx( classes.stage ) }
             style={{ height: stageH }}>
+
+              <div id={ `omicronUpdate` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 350, opacity: 1,
+                }}>
+                <Typography
+                  gutterBottom
+                  variant={ `button` }
+                  className={ clsx( classes.yellow) }>
+                  Omicron update
+                </Typography>
+              </div>
+
+              <div id={ `tick` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 300, opacity: 0,
+                }}>
+                <IconButton
+                  className={ clsx( classes.tickBtn ) }
+                  onClick={ ( e ) => {
+                    e.preventDefault()
+                    setPathname( `/omicron` )
+                  }}>
+                  <img src={ `png/Square-Tick.png` } alt={ `tick` } />
+                </IconButton>
+              </div>
 
               <div id={ `logo` } 
                 className={ clsx( classes.movieClip ) }
@@ -111,20 +144,7 @@ export default function Covid() {
                 <img src={ `png/certificate.png` } alt={ `certificate` } />
               </div> 
 
-              <div id={ `tick` } 
-                className={ clsx( classes.movieClip ) }
-                style={{ 
-                  zIndex: 300, opacity: 0,
-                }}>
-                <IconButton
-                  className={ clsx( classes.tickBtn ) }
-                  onClick={ ( e ) => {
-                    e.preventDefault()
-                    console.log ('tick')
-                  }}>
-                  <img src={ `png/Square-Tick.png` } alt={ `tick` } />
-                </IconButton>
-              </div> 
+ 
 
               <div id={ `question` } 
                 className={ clsx( classes.movieClip ) }

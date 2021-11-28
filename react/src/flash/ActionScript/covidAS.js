@@ -19,6 +19,24 @@ const setup = () => {
         stageH,
     } = sizes
 
+    const tick = getElement( `tick` )
+    gsap.fromTo(`#tick`, {
+      y: stageH - 130,
+      x: stageW - tick.width - 15,
+      rotation: -90,
+    },{
+      opacity: 1,
+      rotation: 0,
+      duration: duration * 0.66,
+      ease: Power2.easeOut,
+    })
+
+    const omicronUpdate = getElement( `omicronUpdate` )
+    gsap.set(`#omicronUpdate`, {
+      y: stageH - 35,
+      x: stageW - omicronUpdate.width - 120,
+    })
+
     gsap.fromTo( `#logo`, {
         x: 8,
     },{
@@ -47,21 +65,11 @@ const setup = () => {
         duration: duration,
         ease: Power2.easeOut,
                   onComplete: () => {
-                      const tick = getElement( `tick` )
-                      gsap.fromTo(`#tick`, {
-                          y: stageH - 130,
-                          x: stageW - tick.width - 15,
-                          rotation: -45,
-                      },{
-                          opacity: 1,
-                          rotation: 0,
-                          duration: duration * 0.66,
-                          ease: Power2.easeOut,
-                      })
+                      
 
                       const question = getElement( `question` )
                       gsap.fromTo(`#question`, {
-                          y: stageH/2 - question.height/2,
+                          y: stageH/2 - question.height/2 + 8,
                       },{
                           opacity: 1,
                           duration: duration,
@@ -96,7 +104,7 @@ const onResize = () => {
         const tick = getElement( `tick` )
         const question = getElement( `question` )
         gsap.to( `#question`, {
-            y: stageH/2 - question.height/2,
+            y: stageH/2 - question.height/2 + 8,
             duration: duration * 0.33,
             ease: Power2.easeOut,
         })
