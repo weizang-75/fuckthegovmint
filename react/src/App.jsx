@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core/'
 import { theme } from './theme'
 import {
-    Flash,
+    AppShell,
 } from './components'
 
 export default function App() {
@@ -36,6 +36,6 @@ export default function App() {
 
   return <MuiThemeProvider theme={ compiledTheme }>
               <CssBaseline />
-              <Flash />
+              <AppShell />
           </MuiThemeProvider>
 }

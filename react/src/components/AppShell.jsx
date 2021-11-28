@@ -7,7 +7,8 @@ import {
   Slide,
 } from '@material-ui/core'
 import { 
-  Covid,
+  // Covid,
+  Omicron,
 } from '../flash'
 
 const useStyles = makeStyles((theme) => ({ 
@@ -20,7 +21,7 @@ const Transition = React.forwardRef( function Transition( props, ref ) {
   return <Slide direction={ `up` } ref={ ref } { ...props } />
 })
 
-export default function Flash() {
+export default function AppShell() {
   const classes = useStyles()
   // const appSlice = useSelector( state => state.app )
   const stageSlice = useSelector( state => state.stage )
@@ -46,6 +47,6 @@ export default function Flash() {
             onClose={ ( e ) => { 
               e.preventDefault()
             }}>
-            <Covid />
+            <Omicron />
           </Dialog>
   }

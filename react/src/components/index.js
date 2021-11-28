@@ -1,7 +1,7 @@
-import Flash from './Flash'
+import AppShell from './AppShell'
 import SwitchLocale from './SwitchLocale'
 
 export {
-	Flash,
+	AppShell,
 	SwitchLocale,
 }

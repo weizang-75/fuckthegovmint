@@ -8,21 +8,15 @@ import clsx from 'clsx'
 import { useSelector } from 'react-redux'
 import { 
   makeStyles,
-  Avatar,
-  Typography,
-  IconButton,
 } from '@material-ui/core'
 import { 
-  stageAS,
+  omicronAS,
   getSizes,
 } from './ActionScript'
-import {
-  SwitchLocale,
-} from '../components'
-import {
-  getQuestion,
-  navigate,
-} from '../redux/app/actions'
+// import {
+//   getQuestion,
+//   navigate,
+// } from '../redux/app/actions'
 
 const useStyles = makeStyles((theme) => ({ 
   stage: {
@@ -46,13 +40,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Stage() {
+export default function Omnicron() {
   
   const classes = useStyles()
-  const appSlice = useSelector( state => state.app )
+  // const appSlice = useSelector( state => state.app )
   const stageSlice = useSelector( state => state.stage )
   const { flash } = stageSlice
-  const { locale } = appSlice
+  // const { locale } = appSlice
   
   
   React.useEffect(() => {
@@ -62,7 +56,7 @@ export default function Stage() {
     } = stageSlice
 
     if ( !stageReady ) {
-      setTimeout(() => { stageAS( `setup` ) }, 10)
+      setTimeout(() => { omicronAS( `setup` ) }, 10)
     }
 
   }, [ stageSlice ])
@@ -70,77 +64,16 @@ export default function Stage() {
   const sizes = getSizes()
   const {
     stageH,
-    stageW,
+    // stageW,
     appBgW,
     appBgH,
-    isMobile,
+    // isMobile,
   } = sizes
-  let panelW = 600
-  if ( isMobile ) panelW = stageW
+  // let panelW = 600
+  // if ( isMobile ) panelW = stageW
 
   return  <div className={ clsx( classes.stage ) }
             style={{ height: stageH }}>
-
-              <div id={ `logo` } 
-                className={ clsx( classes.movieClip ) }
-                style={{ 
-                  zIndex: 100, opacity: 0,
-                }}>
-                <IconButton
-                  onClick={ ( e ) => {
-                    e.preventDefault()
-                    navigate( `https://github.com/weizang-75/fuckthegovmint`, `_blank`)
-                  }}>
-                  <Avatar 
-                    src={`png/binchicken.png` } 
-                    className={ clsx( classes.govmintLogo ) }
-                  />
-                </IconButton>
-              </div> 
-
-              <div id={ `locale` } 
-                className={ clsx( classes.movieClip ) }
-                style={{ 
-                  zIndex: 220, opacity: 0,
-                }}>
-                <SwitchLocale />
-              </div> 
-
-              <div id={ `certificate` } 
-                className={ clsx( classes.movieClip ) }
-                style={{ 
-                  zIndex: 200, opacity: 0,
-                  width: 200, height: 75,
-                }}>
-                <img src={ `png/certificate.png` } alt={ `certificate` } />
-              </div> 
-
-              <div id={ `tick` } 
-                className={ clsx( classes.movieClip ) }
-                style={{ 
-                  zIndex: 300, opacity: 0,
-                }}>
-                
-                <img src={ `png/Square-Tick.png` } alt={ `tick` } />
-                
-              </div> 
-
-              <div id={ `question` } 
-                className={ clsx( classes.movieClip ) }
-                style={{ 
-                  zIndex: 400, opacity: 0,
-                  // border: '1px solid limegreen',
-                  width: panelW,
-                }}>
-                <Typography
-                  gutterBottom
-                  variant={ `h4` }
-                  className={ clsx( classes.white, classes.centerise ) }
-                >
-                  { getQuestion ( locale ) }
-                </Typography>
-               
-              </div> 
 
               <div id={ `appBg` } 
                 className={ clsx( classes.movieClip ) }
