@@ -33,8 +33,10 @@ const setup = () => {
 
     const omicronUpdate = getElement( `omicronUpdate` )
     gsap.set(`#omicronUpdate`, {
-      y: stageH - 35,
-      x: stageW - omicronUpdate.width - 120,
+      y: stageH - 45,
+      x: stageW - omicronUpdate.width - 25,
+      background: 'rgba( 0,0,0,0.4 )',
+      padding: 8,
     })
 
     gsap.fromTo( `#logo`, {
