@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Stage() {
+export default function Covid() {
   
   const classes = useStyles()
   const appSlice = useSelector( state => state.app )

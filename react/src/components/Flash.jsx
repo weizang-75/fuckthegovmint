@@ -6,17 +6,12 @@ import {
   Dialog,
   Slide,
 } from '@material-ui/core'
-import {
-  Timeline,
-} from './'
 import { 
-  Stage,
+  Covid,
 } from '../flash'
 
 const useStyles = makeStyles((theme) => ({ 
   flashDialog: {
-    // zIndex: 99998,
-    // border: '1px solid white',
     borderRadius: theme.spacing( 2 ),
   },
 }))
@@ -34,34 +29,23 @@ export default function Flash() {
     width,
     height,
   } = stageSlice
-  // const { 
-  //   open,
-  // } = appSlice
   let isOpen = true
   const maxWidth = `sm`
-  let flash = {
-    appBg: `dlajsdln`,
-  }
 
-  return  <React.Fragment>
-            <Timeline />
-            <React.Fragment>
-              <Dialog
-                open={ isOpen }
-                fullScreen={ width < 650 || height < 450 ? true : false }
-                classes={{
-                  paper: classes.flashDialog
-                }}
-                className={ clsx( classes.flashDialog ) }
-                TransitionComponent={ Transition }
-                scroll={ `paper` }
-                fullWidth
-                maxWidth={ maxWidth }
-                onClose={ ( e ) => { 
-                  e.preventDefault()
-                }}>
-                <Stage flash={ flash } />
-              </Dialog>
-            </React.Fragment>
-          </React.Fragment>
+  return  <Dialog
+            open={ isOpen }
+            fullScreen={ width < 650 || height < 450 ? true : false }
+            classes={{
+              paper: classes.flashDialog
+            }}
+            className={ clsx( classes.flashDialog ) }
+            TransitionComponent={ Transition }
+            scroll={ `paper` }
+            fullWidth
+            maxWidth={ maxWidth }
+            onClose={ ( e ) => { 
+              e.preventDefault()
+            }}>
+            <Covid />
+          </Dialog>
   }

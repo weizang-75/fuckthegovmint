@@ -1,5 +1,7 @@
-import Stage from './Stage'
+import Covid from './Covid'
+import Omicron from './Omicron'
 
 export {
-	Stage,
+	Covid,
+	Omicron,
 }
