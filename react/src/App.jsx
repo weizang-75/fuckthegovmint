@@ -32,8 +32,6 @@ export default function App() {
   }
   const compiledTheme = createTheme( thisTheme )
 
-  // here we vill route ze epple
-
   return <MuiThemeProvider theme={ compiledTheme }>
               <CssBaseline />
               <AppShell />

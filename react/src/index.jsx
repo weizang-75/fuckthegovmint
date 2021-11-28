@@ -1,16 +1,19 @@
 import pJSON from '../package.json'
-import './theme/style.css'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { createBrowserHistory } from 'history'
 import { Provider } from 'react-redux'
 import reduxStore from './redux'
 import { setSize } from './redux/stage/actions'
 import App from './App'
+import './theme/style.css'
 
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 
 console.log( `${process.env.REACT_APP_APP} ${pJSON.version} (${process.env.REACT_APP_ENV})` )
 
+const getHistory = () => { return createBrowserHistory() }
+export { getHistory }
 
 let element = document.getElementById( `firstPaint` )
 element.classList.add( `depreciated` )

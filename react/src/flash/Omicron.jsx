@@ -32,7 +32,11 @@ const useStyles = makeStyles((theme) => ({
     height: 120,
   },
   white:{
-    color: 'black',
+    color: 'white',
+    fontWeight: 'lighter',
+  },
+  yellow:{
+    color: '#f1fd37',
     fontWeight: 'lighter',
   },
   centerise:{
@@ -64,7 +68,7 @@ export default function Omnicron() {
   } = sizes
 
   // let appBg = `https://listingslab.com/public/png/appBg/target.png`
-  let appBg = `jpg/omicron.jpg`
+  let appBg = null
   
   return  <div className={ clsx( classes.stage ) }
             style={{ height: stageH }}>
@@ -74,7 +78,7 @@ export default function Omnicron() {
                 style={{ 
                   zIndex: 800, opacity: 0,
                 }}>
-                <Typography variant={ `h4`} className={ clsx( classes.white,classes.centerise ) }>
+                <Typography variant={ `h4`} className={ clsx( classes.yellow, classes.centerise ) }>
                   who is calling whom a moron?
                 </Typography>
               </div>
