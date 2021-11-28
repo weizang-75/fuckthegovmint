@@ -58,6 +58,9 @@ export default function Omnicron() {
       setTimeout(() => { omicronAS( `setup` ) }, 10)
       setTimeout(() => { omicronAS( `toMoronic` ) }, 1000)
     }
+
+    console.log ('DO SHIT HERE')
+
   }, [ stageSlice ])
 
   const sizes = getSizes()
