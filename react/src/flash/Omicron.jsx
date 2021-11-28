@@ -8,15 +8,15 @@ import clsx from 'clsx'
 import { useSelector } from 'react-redux'
 import { 
   makeStyles,
+  Typography,
 } from '@material-ui/core'
 import { 
   omicronAS,
   getSizes,
 } from './ActionScript'
 // import {
-//   getQuestion,
-//   navigate,
-// } from '../redux/app/actions'
+//   SwitchLocale,
+// } from '../components'
 
 const useStyles = makeStyles((theme) => ({ 
   stage: {
@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
   },
   white:{
     color: 'white',
+    fontWeight: 'lighter',
   },
   centerise:{
     margin: theme.spacing( 2.5 ),
@@ -43,37 +44,110 @@ const useStyles = makeStyles((theme) => ({
 export default function Omnicron() {
   
   const classes = useStyles()
-  // const appSlice = useSelector( state => state.app )
   const stageSlice = useSelector( state => state.stage )
-  const { flash } = stageSlice
-  // const { locale } = appSlice
-  
-  
+ 
   React.useEffect(() => {
-
     const {
       stageReady,
     } = stageSlice
-
     if ( !stageReady ) {
       setTimeout(() => { omicronAS( `setup` ) }, 10)
+      setTimeout(() => { omicronAS( `toMoronic` ) }, 1000)
     }
-
   }, [ stageSlice ])
 
   const sizes = getSizes()
   const {
     stageH,
-    // stageW,
     appBgW,
     appBgH,
-    // isMobile,
   } = sizes
-  // let panelW = 600
-  // if ( isMobile ) panelW = stageW
 
+  // let appBg = `https://listingslab.com/public/png/appBg/target.png`
+  let appBg = null
+  
   return  <div className={ clsx( classes.stage ) }
             style={{ height: stageH }}>
+
+              <div id={ `question` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 800, opacity: 0,
+                }}>
+                <Typography variant={ `h4`} className={ clsx( classes.white,classes.centerise ) }>
+                  who is calling whom a moron?
+                </Typography>
+              </div>
+
+              <div id={ `omnicron_6` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 700, opacity: 0,
+                }}>
+                <Typography variant={ `h1`} className={ clsx( classes.white ) }>
+                  n
+                </Typography>
+              </div>
+
+              <div id={ `omnicron_5` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 600, opacity: 0,
+                }}>
+                <Typography variant={ `h1`} className={ clsx( classes.white ) }>
+                  o
+                </Typography>
+              </div>
+
+              <div id={ `omnicron_4` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 500, opacity: 0,
+                }}>
+                <Typography variant={ `h1`} className={ clsx( classes.white ) }>
+                  r
+                </Typography>
+              </div>
+
+              <div id={ `omnicron_3` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 400, opacity: 0,
+                }}>
+                <Typography variant={ `h1`} className={ clsx( classes.white ) }>
+                  c
+                </Typography>
+              </div> 
+
+              <div id={ `omnicron_2` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 300, opacity: 0,
+                }}>
+                <Typography variant={ `h1`} className={ clsx( classes.white ) }>
+                  i
+                </Typography>
+              </div> 
+
+              <div id={ `omnicron_1` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 200, opacity: 0,
+                }}>
+                <Typography variant={ `h1`} className={ clsx( classes.white ) }>
+                  m
+                </Typography>
+              </div> 
+
+              <div id={ `omnicron_0` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 100, opacity: 0,
+                }}>
+                <Typography variant={ `h1`} className={ clsx( classes.white ) }>
+                  o
+                </Typography>
+              </div> 
 
               <div id={ `appBg` } 
                 className={ clsx( classes.movieClip ) }
@@ -81,11 +155,28 @@ export default function Omnicron() {
                   zIndex: 1,
                   width: appBgW, height: appBgH,
                 }}>
-                { flash.appBg ? <img 
+                { appBg ? <img 
                   style={{ width: '100%', height: '100%' }}
-                  src={ flash.appBg } 
+                  src={ appBg } 
                   alt={ `App Background` }/> : null }
              </div>  
 
            </div>
   }
+
+
+
+
+
+
+/*
+
+<div id={ `locale` } 
+  className={ clsx( classes.movieClip ) }
+  style={{ 
+    zIndex: 2200, opacity: 1,
+  }}>
+  <SwitchLocale />
+</div> 
+
+*/
