@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Omnicron() {
+export default function Omicron() {
   
   const classes = useStyles()
   const stageSlice = useSelector( state => state.stage )
