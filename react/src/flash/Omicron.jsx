@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     height: 120,
   },
   white:{
-    color: 'white',
+    color: 'black',
     fontWeight: 'lighter',
   },
   centerise:{
@@ -64,7 +64,7 @@ export default function Omnicron() {
   } = sizes
 
   // let appBg = `https://listingslab.com/public/png/appBg/target.png`
-  let appBg = null
+  let appBg = `jpg/omicron.jpg`
   
   return  <div className={ clsx( classes.stage ) }
             style={{ height: stageH }}>

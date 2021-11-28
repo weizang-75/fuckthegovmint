@@ -7,7 +7,7 @@ import {
   Slide,
 } from '@material-ui/core'
 import { 
-  // Covid,
+  Covid,
   Omicron,
 } from '../flash'
 
@@ -33,6 +33,9 @@ export default function AppShell() {
   let isOpen = true
   const maxWidth = `sm`
 
+  let thingo = <Omicron />
+  thingo = <Covid />
+
   return  <Dialog
             open={ isOpen }
             fullScreen={ width < 650 || height < 450 ? true : false }
@@ -47,6 +50,6 @@ export default function AppShell() {
             onClose={ ( e ) => { 
               e.preventDefault()
             }}>
-            <Omicron />
+            { thingo }
           </Dialog>
   }

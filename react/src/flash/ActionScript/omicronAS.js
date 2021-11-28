@@ -23,7 +23,7 @@ const toOmnicron = () => {
     const omnicron_5 = getElement( `omnicron_5` ) 
     const omnicron_6 = getElement( `omnicron_6` )
     
-    const midY = stageH/2 - omnicron_1.height/2  -34
+    const midY = stageH/2 - omnicron_1.height/2 - 150
     const wordWidth = omnicron_0.width + omnicron_1.width + omnicron_2.width + omnicron_3.width + omnicron_4.width + omnicron_5.width + omnicron_6.width
     const offsetX = (stageW - wordWidth)/2
 
@@ -111,7 +111,7 @@ const toMoronic = () => {
     const omnicron_5 = getElement( `omnicron_5` ) 
     const omnicron_6 = getElement( `omnicron_6` )
     
-    const midY = stageH/2 - omnicron_1.height/2  -34
+    const midY = stageH/2 - omnicron_1.height/2  -150
     const wordWidth = omnicron_0.width + omnicron_1.width + omnicron_2.width + omnicron_3.width + omnicron_4.width + omnicron_5.width + omnicron_6.width
     const offsetX = (stageW - wordWidth)/2
 
@@ -201,7 +201,7 @@ const setup = () => {
     const omnicron_6 = getElement( `omnicron_6` )
     const question = getElement( `question` )
     
-    const midY = stageH/2 - omnicron_0.height/2 -34
+    const midY = stageH/2 - omnicron_0.height/2 - 150
     const wordWidth = omnicron_0.width + omnicron_1.width + omnicron_2.width + omnicron_3.width + omnicron_4.width + omnicron_5.width + omnicron_6.width
     const offsetX = (stageW - wordWidth)/2
 
