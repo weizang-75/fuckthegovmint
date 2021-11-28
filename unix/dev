@@ -4,7 +4,7 @@ clear
 yarn
 
 echo ''
-echo '#fuckthegovmint DEV Server'
+echo 'Starting fuckthegovmint DEV Server...'
 echo ''
 sleep 1
 cd ./react 

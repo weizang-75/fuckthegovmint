@@ -8,7 +8,7 @@ import {
   IconButton,
 } from '@material-ui/core'
 import { 
-  stageAS,
+  covidAS,
   getSizes,
 } from './ActionScript'
 import {
@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     zIndex: 99998,
     overflow:'hidden'
+  },
+  tickBtn:{
+    // border: '1px solid white',
+    padding: 0,
   },
   movieClip:{
     position: 'absolute',
@@ -51,15 +55,12 @@ export default function Covid() {
   
   
   React.useEffect(() => {
-
     const {
       stageReady,
     } = stageSlice
-
     if ( !stageReady ) {
-      setTimeout(() => { stageAS( `setup` ) }, 10)
+      setTimeout(() => { covidAS( `setup` ) }, 10)
     }
-
   }, [ stageSlice ])
 
   const sizes = getSizes()
@@ -115,9 +116,14 @@ export default function Covid() {
                 style={{ 
                   zIndex: 300, opacity: 0,
                 }}>
-                
-                <img src={ `png/Square-Tick.png` } alt={ `tick` } />
-                
+                <IconButton
+                  className={ clsx( classes.tickBtn ) }
+                  onClick={ ( e ) => {
+                    e.preventDefault()
+                    console.log ('tick')
+                  }}>
+                  <img src={ `png/Square-Tick.png` } alt={ `tick` } />
+                </IconButton>
               </div> 
 
               <div id={ `question` } 
@@ -130,8 +136,7 @@ export default function Covid() {
                 <Typography
                   gutterBottom
                   variant={ `h4` }
-                  className={ clsx( classes.white, classes.centerise ) }
-                >
+                  className={ clsx( classes.white, classes.centerise ) }>
                   { getQuestion ( locale ) }
                 </Typography>
                

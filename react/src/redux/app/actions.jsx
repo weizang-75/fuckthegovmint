@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit'
 import { getStore } from '../../'
-import { stageAS } from '../../flash/ActionScript'
+import { covidAS } from '../../flash/ActionScript'
 
 export const error = createAction(`APP/ERROR`)
 export const open = createAction(`APP/OPEN`)
@@ -17,7 +17,7 @@ export const switchLocale = locale => {
 	const store = getStore()
 	store.dispatch({ type: `APP/LOCALE`, locale })
 	setTimeout(() => {
-		stageAS( `onResize` )
+		covidAS( `onResize` )
 	}, 250)
 	return true
 }

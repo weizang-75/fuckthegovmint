@@ -1,11 +1,11 @@
 #!/bin/bash
 # chmod ug+x git
 echo ''
-echo 'fuckthegovmint git'
+echo 'Committing fuckthegovmint to Git'
 sleep 1
 git status
 git add .
 git status
-git commit -m '1.1.3'
+git commit -m '1.1.4'
 git status
 git push

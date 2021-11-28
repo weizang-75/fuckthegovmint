@@ -128,7 +128,7 @@ const onResize = () => {
 }
 
 
-export const stageAS = ( event ) => {
+export const covidAS = ( event ) => {
     switch ( event ) {
         case `setup`:
             return setup()
@@ -139,3 +139,4 @@ export const stageAS = ( event ) => {
         }
     }
 }
+

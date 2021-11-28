@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux'
 import { 
   makeStyles,
   Typography,
+  IconButton,
 } from '@material-ui/core'
 import { 
   omicronAS,
@@ -75,6 +76,21 @@ export default function Omnicron() {
   
   return  <div className={ clsx( classes.stage ) }
             style={{ height: stageH }}>
+
+               <div id={ `tick` } 
+                className={ clsx( classes.movieClip ) }
+                style={{ 
+                  zIndex: 300, opacity: 1,
+                }}>
+                <IconButton
+                  className={ clsx( classes.tickBtn ) }
+                  onClick={ ( e ) => {
+                    e.preventDefault()
+                    console.log ('tick')
+                  }}>
+                  <img src={ `png/Square-Tick.png` } alt={ `tick` } />
+                </IconButton>
+              </div> 
 
               <div id={ `question` } 
                 className={ clsx( classes.movieClip ) }

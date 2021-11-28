@@ -1,10 +1,10 @@
-import { stageAS } from './stageAS'
+import { covidAS } from './covidAS'
 import { omicronAS } from './omicronAS'
 import { getSizes } from './lib/getSizes'
 import { getElement } from './lib/getElement'
 
 export {
-	stageAS,
+	covidAS,
 	omicronAS,
 	getSizes,
 	getElement,

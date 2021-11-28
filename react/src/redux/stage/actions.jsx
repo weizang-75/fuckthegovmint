@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit'
 import { getStore } from '../../'
 import { 
-	stageAS,
+	covidAS,
 } from '../../flash/ActionScript/'
 
 export const error = createAction(`STAGE/ERROR`) 
@@ -30,7 +30,7 @@ export const setSize = () => {
 	store.dispatch({type: `STAGE/WIDTH`, width })
 	store.dispatch({type: `STAGE/HEIGHT`, height })
 	setTimeout( () => {
-		stageAS( `onResize` )
+		covidAS( `onResize` )
 	}, 100)
 	return true
 }
