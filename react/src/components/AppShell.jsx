@@ -12,6 +12,8 @@ import {
   Covid,
   Omicron,
 } from '../flash'
+import { init } from '../person/actions'
+
 import { setPathname } from '../redux/app/actions'
 
 const useStyles = makeStyles((theme) => ({ 
@@ -28,16 +30,21 @@ export default function AppShell() {
 
   const classes = useStyles()
   const appSlice = useSelector( state => state.app )
+  const personSlice = useSelector( state => state.person )
+  const stageSlice = useSelector( state => state.stage )
   const { 
     pathname,
   } = appSlice
-
-  const stageSlice = useSelector( state => state.stage )
-
+  
   React.useEffect(() => {
     const { pathname } = appSlice
     if ( !pathname ) setPathname( getHistory().location.pathname )
-  }, [ appSlice ])
+    const {
+      initting,
+      initted,
+    } = personSlice
+    if ( !initted && !initting ) init()
+  }, [ appSlice, personSlice ])
 
   if ( !pathname ) return null
   let appComponent = null
