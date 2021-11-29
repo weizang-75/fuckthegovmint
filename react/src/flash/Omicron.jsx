@@ -56,8 +56,8 @@ export default function Omicron() {
       stageReady,
     } = stageSlice
     if ( !stageReady ) {
-      setTimeout(() => { omicronAS( `setup` ) }, 10)
-      setTimeout(() => { omicronAS( `toMoronic` ) }, 1000)
+      setTimeout(() => { omicronAS( `setup` ) }, 100)
+      setTimeout(() => { omicronAS( `toMoronic` ) }, 500)
     }
     document.title = `Omnicron. Who is calling whom a moron?`
   }, [ stageSlice ])

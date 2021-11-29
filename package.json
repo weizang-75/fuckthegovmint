@@ -1,12 +1,12 @@
 {
-	"version": "1.1.4",
+	"version": "1.1.5",
 	"name": "fuckthegovmint",
 	"description": "渐进式网络应用程序",
 	"repository": "https://github.com/weizang-75/fuckthegovmint",
 	"author": "weizang-75 <weizang75@gmail.com>",
 	"license": "MIT",
 	"scripts": {
-		"#fuckthegovmint": "clear && echo Connect with people on WordPress",
+		"#fuckthegovmint": "clear && echo Small Acts of Sedition",
 		"dev": "$PWD/unix/dev",
 		"deploy": "$PWD/unix/deploy",
 		"git": "$PWD/unix/git"

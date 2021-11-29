@@ -5,6 +5,8 @@ import {
   fingerprinting,
   fingerprinted,
   fingerprint,
+  initting,
+  initted,
 } from './actions'
 
 export const personSlice = {
@@ -13,9 +15,21 @@ export const personSlice = {
   fingerprinted: false,
   fingerprint: null,
   geo: null,
+  initting: false,
+  initted: false,
 }
 
 const personReducer = createReducer( personSlice, {
+
+  [initted]: (state, action) => {
+    state.initted = action.initted
+    return state
+  },
+
+  [initting]: (state, action) => {
+    state.initting = action.initting
+    return state
+  },
 
   [fingerprint]: (state, action) => {
     state.fingerprint = action.fingerprint

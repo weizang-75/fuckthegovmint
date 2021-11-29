@@ -1,5 +1,5 @@
 {
-  "version": "1.1.4",
+  "version": "1.1.5",
   "name": "fuckthegovmint",
   "description": "这是一个开源 React 应用程序，可以以各种有趣或严肃的方式使用。 它知道以下语言",
   "repository": "https://github.com/weizang-75/fuckthegovmint",
@@ -15,6 +15,7 @@
     "@material-ui/icons": "^4.11.2",
     "@reduxjs/toolkit": "^1.6.2",
     "axios": "^0.23.0",
+    "firebase": "^9.5.0",
     "gsap": "^3.8.0",
     "history": "^5.1.0",
     "moment": "^2.29.1",

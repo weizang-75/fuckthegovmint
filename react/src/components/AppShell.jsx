@@ -25,11 +25,10 @@ const Transition = React.forwardRef( function Transition( props, ref ) {
 })
 
 export default function AppShell() {
-  const classes = useStyles()
 
+  const classes = useStyles()
   const appSlice = useSelector( state => state.app )
   const { 
-    // location,
     pathname,
   } = appSlice
 
@@ -41,7 +40,6 @@ export default function AppShell() {
   }, [ appSlice ])
 
   if ( !pathname ) return null
-  // const { pathname } = location
   let appComponent = null
   switch ( pathname ) {
       case `/`:
@@ -50,8 +48,6 @@ export default function AppShell() {
       case `/omicron`:
           appComponent = <Omicron />
           break
-
-
       default: {
           return null
       }
