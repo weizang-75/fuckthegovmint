@@ -6,6 +6,6 @@ sleep 1
 git status
 git add .
 git status
-git commit -m '1.1.4'
+git commit -m '1.1.6'
 git status
 git push
